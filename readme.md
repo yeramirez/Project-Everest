@@ -2,13 +2,15 @@
 
 There is a Google Sheets version of this located [here](https://docs.google.com/spreadsheets/d/144-5S3_ikNOalNCMibeG2B-tkY3FAYLZn-cgqztHL0o/edit?usp=sharing).
 
-###Front-End-ish User Stories
+There is also a blog that will capture day-to-day adventures with Choral! [Take me there](http://yxnely.tumblr.com/)!
+
+###Front-End (ish) User Stories
 | Issue #       | Description   					| Status     |
 | ------------- |:------------- 					|:----------:|
 | C100          | Landing Page - CTA				| Incomplete |
 | C101          | Landing Page - Features List  	| Incomplete |
 
-###Back-End-ish User Stories
+###Back-End (ish) User Stories
 | Issue #       | Description   										 				| Status     |
 | ------------- |:------------- 										 				|:----------:|
 | D100          | User should be able to log in using Google credentials 				| Incomplete |
