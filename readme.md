@@ -1,3 +1,7 @@
+#Project Tamu (Massif)
+####Background: 
+Tamu is the name of this project because of a.) Tamu Massif is considered the largest volcano on Earth and b.) because volcanoes rock (haha, get it?)! But seriously, this project is the biggest thing I've tackled so far in my development career. As of now, this is a work in project and the progress will be reflected here, in its very own Github. Join me, as I conquer my very own Tamu Massif.
+
 ##Choral Milestones
 
 There is a Google Sheets version of this located [here](https://docs.google.com/spreadsheets/d/144-5S3_ikNOalNCMibeG2B-tkY3FAYLZn-cgqztHL0o/edit?usp=sharing).
