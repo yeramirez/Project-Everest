@@ -4,17 +4,17 @@ body {
   color: #212121; }
 
 /* ------------ Navigation ------------ */
-nav {
+div nav {
   float: right;
   padding-top: 30px;
   padding-right: 75px;
   height: 25px;
   margin-bottom: 5%; }
 
-nav > a:first-of-type {
+div nav a:first-of-type {
   padding-right: 60px; }
 
-nav a:last-of-type {
+div nav a:last-of-type {
   padding: 10px 20px;
   border: 2px solid #4994FC; }
 
@@ -40,33 +40,75 @@ a {
   color: #F2F2F2;
   text-decoration: none; }
 
-button {
+.cta-inner button {
   height: 40px;
   width: 120px;
-  border: 2px solid #4994FC;
+  border: 3px solid #4994FC;
   border-radius: 2px;
-  background-color: #212121;
+  background-color: transparent;
+  font-weight: bold;
   font-size: 20px;
   font-family: "Karla";
   color: #F2F2F2; }
 
 /* ------------ Body ------------ */
+.footer-cta {
+  text-align: center;
+  background-color: #F2F2F2;
+  padding: 25px; }
+
+.footer-cta h2 {
+  font-weight: bold; }
+
+.footer-cta p {
+  margin-top: 10px; }
+
+.footer-cta button {
+  height: 40px;
+  width: 120px;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid #4994FC;
+  border-radius: 2px;
+  background-color: transparent; }
+
+footer, footer > nav > a {
+  text-align: center;
+  margin: 20px;
+  color: #212121; }
+
 .index-icon {
   height: 150px; }
 
-.land-rows > .index-icon:nth-child(odd) {
-  float: left; }
+@media (min-width: 600px) {
+  .share, .like {
+    float: right;
+    padding-left: 20px; }
 
-.land-rows > .index-icon:nth-child(even) {
-  float: right; }
+  .collab, .follow {
+    float: left;
+    padding-right: 20px; }
 
-.land-rows {
-  max-width: 900px;
-  height: 200px;
-  margin: auto; }
+  .land-rows {
+    max-width: 800px;
+    height: 200px;
+    padding-left: 7%;
+    padding-right: 7%;
+    margin: 20px auto; }
 
-/* ------------ Media Queries ------------ */
-/*@media only screen and (max-width: 1340px) {
-}*/
+  .land-rows > article {
+    padding-top: 20px; } }
+@media (max-width: 599px) {
+  .index-icon {
+    margin: auto;
+    height: 100px;
+    display: block; }
+
+  .land-rows {
+    padding: 30px; }
+
+  article h2 {
+    text-align: center; } }
 
 /*# sourceMappingURL=main.css.map */
