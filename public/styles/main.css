@@ -1,0 +1,72 @@
+/* ------------ Variable Declarations ------------ */
+body {
+  font: 100% "Karla";
+  color: #212121; }
+
+/* ------------ Navigation ------------ */
+nav {
+  float: right;
+  padding-top: 30px;
+  padding-right: 75px;
+  height: 25px;
+  margin-bottom: 5%; }
+
+nav > a:first-of-type {
+  padding-right: 60px; }
+
+nav a:last-of-type {
+  padding: 10px 20px;
+  border: 2px solid #4994FC; }
+
+nav a:hover {
+  text-decoration: none;
+  color: #F2F2F2; }
+
+/* ------------ CTA ------------ */
+.cta-outer {
+  background-color: #212121;
+  padding-bottom: 5%; }
+
+.logo {
+  width: 200px; }
+
+.cta-inner {
+  clear: both;
+  text-align: center;
+  color: #F2F2F2;
+  text-transform: capitalize; }
+
+a {
+  color: #F2F2F2;
+  text-decoration: none; }
+
+button {
+  height: 40px;
+  width: 120px;
+  border: 2px solid #4994FC;
+  border-radius: 2px;
+  background-color: #212121;
+  font-size: 20px;
+  font-family: "Karla";
+  color: #F2F2F2; }
+
+/* ------------ Body ------------ */
+.index-icon {
+  height: 150px; }
+
+.land-rows > .index-icon:nth-child(odd) {
+  float: left; }
+
+.land-rows > .index-icon:nth-child(even) {
+  float: right; }
+
+.land-rows {
+  max-width: 900px;
+  height: 200px;
+  margin: auto; }
+
+/* ------------ Media Queries ------------ */
+/*@media only screen and (max-width: 1340px) {
+}*/
+
+/*# sourceMappingURL=main.css.map */

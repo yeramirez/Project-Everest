@@ -1,0 +1,101 @@
+/* ------------ Variable Declarations ------------ */
+
+$font-stack: 'Karla';
+$primary-color: #4994FC;
+$base-color: #212121;
+$secondary-color: #F2F2F2;
+$no-decoration: none;
+
+
+body {
+  font: 100% $font-stack;
+  color: $base-color;
+}
+
+/* ------------ Navigation ------------ */
+
+nav {
+  float: right;
+  padding-top: 30px;
+  padding-right: 75px;
+  height: 25px;
+  margin-bottom: 5%;
+}
+
+nav > a:first-of-type {
+  padding-right: 60px;
+}
+
+nav a:last-of-type {
+  padding: 10px 20px;
+  border: 2px solid $primary-color;
+}
+
+nav a:hover {
+  text-decoration: $no-decoration;
+  color: $secondary-color;
+}
+
+/* ------------ CTA ------------ */
+
+.cta-outer {
+  background-color: $base-color;
+  padding-bottom: 5%;
+}
+
+.logo {
+  width: 200px;
+}
+
+.cta-inner {
+  clear: both;
+  text-align: center;
+  color: $secondary-color;
+  text-transform: capitalize;
+}
+
+a {
+  color: $secondary-color;
+  text-decoration: $no-decoration;
+}
+
+button {
+  height: 40px;
+  width: 120px;
+  border: 2px solid $primary-color;
+  border-radius: 2px;
+  background-color: $base-color;
+  font-size: 20px;
+  font-family: $font-stack;
+  color: $secondary-color;
+}
+
+
+/* ------------ Body ------------ */
+
+.index-icon {
+  height: 150px;
+}
+
+.land-rows > .index-icon:nth-child(odd) {
+  float: left;
+}
+
+.land-rows > .index-icon:nth-child(even) {
+  float: right;
+}
+
+.land-rows {
+  max-width: 900px;
+  height: 200px;
+  margin: auto;
+}
+
+/* ------------ Media Queries ------------ */
+
+/*@media only screen and (max-width: 1340px) {
+}*/
+
+
+
+
