@@ -81,7 +81,7 @@ footer, footer > nav > a {
 .index-icon {
   height: 150px; }
 
-@media (min-width: 600px) {
+@media (min-width: 550px) {
   .share, .like {
     float: right;
     padding-left: 20px; }
@@ -91,7 +91,7 @@ footer, footer > nav > a {
     padding-right: 20px; }
 
   .land-rows {
-    max-width: 800px;
+    max-width: 1020px;
     height: 200px;
     padding-left: 7%;
     padding-right: 7%;
@@ -99,7 +99,7 @@ footer, footer > nav > a {
 
   .land-rows > article {
     padding-top: 20px; } }
-@media (max-width: 599px) {
+@media (max-width: 549px) {
   .index-icon {
     margin: auto;
     height: 100px;
