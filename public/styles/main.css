@@ -1,6 +1,6 @@
 /* ------------ Variable Declarations ------------ */
 body {
-  font: 100% "Karla";
+  font: 100% "Karla", sans-serif;
   color: #212121; }
 
 /* ------------ Navigation ------------ */
@@ -48,7 +48,7 @@ a {
   background-color: transparent;
   font-weight: bold;
   font-size: 20px;
-  font-family: "Karla";
+  font-family: "Karla", sans-serif;
   color: #F2F2F2; }
 
 /* ------------ Body ------------ */
@@ -81,7 +81,7 @@ footer, footer > nav > a {
 .index-icon {
   height: 150px; }
 
-@media (min-width: 600px) {
+@media (min-width: 550px) {
   .share, .like {
     float: right;
     padding-left: 20px; }
@@ -91,7 +91,7 @@ footer, footer > nav > a {
     padding-right: 20px; }
 
   .land-rows {
-    max-width: 800px;
+    max-width: 1020px;
     height: 200px;
     padding-left: 7%;
     padding-right: 7%;
@@ -99,16 +99,17 @@ footer, footer > nav > a {
 
   .land-rows > article {
     padding-top: 20px; } }
-@media (max-width: 599px) {
+@media (max-width: 549px) {
   .index-icon {
     margin: auto;
     height: 100px;
     display: block; }
 
   .land-rows {
-    padding: 30px; }
-
-  article h2 {
-    text-align: center; } }
+    padding: 30px; } }
+.logo {
+  padding-top: 20px; }
+  .logo article h2 {
+    text-align: center; }
 
 /*# sourceMappingURL=main.css.map */
