@@ -1,6 +1,6 @@
 #Project Everest
 ####Background: 
-Mt. Everest is the name of this project because of a.) Everest is considered the highest mountain on Earth and b.) because mountains rock! (haha, get it?) But seriously, this project is the biggest thing I've tackled so far in my development career. As of now, this is a work in project and the progress will be reflected here, in its very own Github.
+Mt. Everest is the name of this project because of a.) Everest is considered the highest mountain on Earth and b.) because mountains rock! (haha, get it?) But seriously, this project is the biggest thing I've tackled so far in my development career and I consider it my own Mt. Everest. As of now, this is a work in progress and the progress will be reflected here, in its very own Github.
 
 Join me, as I conquer my very own Mt. Everest.
 
