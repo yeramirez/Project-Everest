@@ -5,27 +5,28 @@ body {
 
 /* ------------ Navigation ------------ */
 div nav {
-  float: right;
   padding-top: 30px;
-  padding-right: 75px;
+  padding-right: 10%;
   height: 25px;
-  margin-bottom: 5%; }
+  margin-bottom: 5%;
+  border: 1px solid white;
+  text-align: right; }
 
 div nav a:first-of-type {
-  padding-right: 60px; }
+  padding-right: 20px; }
 
-div nav a:last-of-type {
-  padding: 10px 20px;
-  border: 2px solid #4994FC; }
+.g-signin2 {
+  display: inline-block;
+  padding-top: 20px; }
 
-nav a:hover {
+nav a:hover a:active {
   text-decoration: none;
   color: #F2F2F2; }
 
 /* ------------ CTA ------------ */
 .cta-outer {
   background-color: #212121;
-  padding-bottom: 5%; }
+  padding-bottom: 3%; }
 
 .logo {
   width: 200px; }
@@ -39,17 +40,6 @@ nav a:hover {
 a {
   color: #F2F2F2;
   text-decoration: none; }
-
-.cta-inner button {
-  height: 40px;
-  width: 120px;
-  border: 3px solid #4994FC;
-  border-radius: 2px;
-  background-color: transparent;
-  font-weight: bold;
-  font-size: 20px;
-  font-family: "Karla", sans-serif;
-  color: #F2F2F2; }
 
 /* ------------ Body ------------ */
 .footer-cta {
@@ -106,10 +96,10 @@ footer, footer > nav > a {
     display: block; }
 
   .land-rows {
-    padding: 30px; } }
-.logo {
-  padding-top: 20px; }
-  .logo article h2 {
-    text-align: center; }
+    padding: 30px; }
+
+  padding-top: 20px;
+  article h2 {
+    text-align: center; } }
 
 /*# sourceMappingURL=main.css.map */
