@@ -20,16 +20,16 @@ There is also a blog that will capture day-to-day adventures with Choral -- [Tak
 ####Back-End (ish) User Stories
 | Issue #       | Description   										 				| Status     |
 | ------------- |:------------- 										 				|:----------:|
-| D100          | User should be able to log in using Google credentials 				| Incomplete |
-| D101          | User should be able to find informative information about Choral   	| Incomplete |
+| D100          | User should be able to log in using Google credentials 				| Complete |
+| D101          | User should be able to find informative information about Choral   	| Complete |
 | ----          | ------------------------------------------------------				| ---------- |
-| D200          | User should be able to log out      								   	| Incomplete |
+| D200          | User should be able to log out      								   	| Complete |
 | D201          | User should be able to view feed										| Incomplete |
-| D202          | User should be able to 'like' a post								   	| Incomplete |
+| D202          | User should be able to 'like' a post								   	| Complete |
 | D203          | User should be able to 'follow' another User							| Incomplete |
 | D204          | User should be able to 'collab' to another user's post			   	| Incomplete |
 | D205          | User should be able to click on a username on a post and go to their profile				| Incomplete |
-| D206          | User should be able to view how many likes a post has				  	| Incomplete |
+| D206          | User should be able to view how many likes a post has				  	| Complete |
 | ----          | ------------------------------------------------------				| ---------- |
 | D300          | User should be able to see posted posts     						   	| Incomplete |
 | D301          | User should be able to see their rank									| Incomplete |

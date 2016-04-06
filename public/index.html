@@ -11,8 +11,14 @@
 	<div>
 		{{main}}
 	</div>
-	<div ng-repeat="post in posts | orderBy: '-upvotes' ">
-		{{post.title}} - upvotes: {{post.upvotes}}
+	<div ng-repeat="card in cards | orderBy: '-upvotes' ">
+		<span ng-click="addOne(card)">^</span>
+		{{card.lyrics}} - upvotes: {{card.upvotes}}
 	</div>
+	<form ng-submit="addCard()">
+		<input type="text" placeholder="Express yourself..." ng-model="lyrics"></input>
+		<input type="text" placeholder="Soundcloud Link" ng-model="link"></input>
+		<button type="submit">Post</button>
+	</form>
 </body>
 </html>
