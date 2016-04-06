@@ -10,4 +10,3 @@ app.controller('MainCtrl', ['$scope', function($scope){
 		{title: 'post 5', upvotes: 4}
 	];
 }]);
-

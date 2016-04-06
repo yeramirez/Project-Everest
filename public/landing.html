@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Choral Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id" content="38825868046-u1v5rvh3quhji1td6rblpg4phmt1t3lq.apps.googleusercontent.com">
     <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/reset.css">
@@ -11,14 +13,14 @@
   <body>
     <div class="cta-outer">
       <nav>
-        <a href="#">Sign In</a>
-        <a href="#">Sign Up</a>
+        <a href="#">About</a>
+        <a href="#" onclick="signOut();">Sign out</a>
       </nav>
         <br/>
       <div class="cta-inner">
         <img src="img/ramirez-logo.svg" class="logo" alt="Choral Logo"/>
         <h1>Let's Collaborate</h1>
-        <button type="button" name="button">Sign Up</button>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
       </div>
     </div>
     <div>
@@ -54,7 +56,7 @@
     <div class="footer-cta">
       <h2>JOIN NOW</h2>
       <p>Become a part of a creative community. Let's Collaborate!</p>
-      <button type="button" name="button">Sign Up</button>
+      <div class="g-signin2" data-onsuccess="onSignIn"></div>
     </div>
     <footer>
       <nav>
@@ -63,5 +65,7 @@
         <a href="#">LEGAL</a>
       </nav>
     </footer>
+    <script type="text/javascript" src="scripts/services/login.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
   </body>
 </html>
