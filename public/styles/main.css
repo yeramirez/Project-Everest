@@ -48,7 +48,11 @@ a {
   background-color: transparent;
   font-weight: bold;
   font-size: 20px;
+<<<<<<< HEAD
   font-family: "Karla";
+=======
+  font-family: "Karla", sans-serif;
+>>>>>>> parent of d879c2a... Fixing folder structure & added scripts
   color: #F2F2F2; }
 
 /* ------------ Body ------------ */
@@ -106,9 +110,17 @@ footer, footer > nav > a {
     display: block; }
 
   .land-rows {
+<<<<<<< HEAD
     padding: 30px; }
 
   article h2 {
     text-align: center; } }
+=======
+    padding: 30px; } }
+.logo {
+  padding-top: 20px; }
+  .logo article h2 {
+    text-align: center; }
+>>>>>>> parent of d879c2a... Fixing folder structure & added scripts
 
 /*# sourceMappingURL=main.css.map */

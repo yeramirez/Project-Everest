@@ -1,0 +1,150 @@
+/* ------------ Variable Declarations ------------ */
+
+$font-stack: 'Karla', sans-serif
+$primary-color: #4994FC
+$base-color: #212121
+$secondary-color: #F2F2F2
+$no-decoration: none
+
+
+body
+  font: 100% $font-stack
+  color: $base-color
+
+
+/* ------------ Navigation ------------ */
+
+div nav
+  float: right
+  padding-top: 30px
+  padding-right: 75px
+  height: 25px
+  margin-bottom: 5%
+
+
+div nav a:first-of-type
+  padding-right: 60px
+
+
+div nav a:last-of-type
+  padding: 10px 20px
+  border: 2px solid $primary-color
+
+
+nav a:hover
+  text-decoration: $no-decoration
+  color: $secondary-color
+
+/* ------------ CTA ------------ */
+
+.cta-outer
+  background-color: $base-color
+  padding-bottom: 5%
+
+
+.logo
+  width: 200px
+
+.cta-inner
+  clear: both
+  text-align: center
+  color: $secondary-color
+  text-transform: capitalize
+
+a 
+  color: $secondary-color
+  text-decoration: $no-decoration
+
+.cta-inner button 
+  height: 40px
+  width: 120px
+  border: 3px solid $primary-color
+  border-radius: 2px
+  background-color: transparent
+  font-weight: bold
+  font-size: 20px
+  font-family: $font-stack
+  color: $secondary-color
+
+
+
+/* ------------ Body ------------ */
+
+.footer-cta 
+  text-align: center
+  background-color: $secondary-color
+  padding: 25px 
+
+
+.footer-cta h2 
+  font-weight: bold
+
+
+.footer-cta p 
+  margin-top: 10px 
+
+
+.footer-cta button 
+  height: 40px
+  width: 120px
+  margin-top: 20px
+  font-size: 20px
+  font-weight: bold
+  border: 2px solid $primary-color
+  border-radius: 2px
+  background-color: transparent
+
+
+footer, footer > nav > a 
+  text-align: center
+  margin: 20px
+  color: $base-color
+
+.index-icon 
+  height: 150px
+
+@media (min-width: 550px) 
+  .share, .like 
+    float: right
+    padding-left: 20px
+  
+
+  .collab, .follow 
+    float: left
+    padding-right: 20px
+  
+
+  .land-rows 
+    max-width: 1020px
+    height: 200px
+    padding-left: 7%
+    padding-right: 7%
+    margin: 20px auto
+  
+
+  .land-rows > article 
+    padding-top: 20px
+  
+
+
+@media (max-width: 549px) 
+  .index-icon 
+    margin: auto
+    height: 100px
+    display: block
+  
+  .land-rows 
+    padding: 30px
+  
+.logo
+  padding-top: 20px
+
+
+  article h2 
+    text-align: center
+  
+
+
+
+
+
