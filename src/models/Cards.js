@@ -1,3 +1,5 @@
+'use strict'
+
 var mongoose = require('mongoose');
 
 var CardSchema = new mongoose.Schema({
@@ -6,4 +8,6 @@ var CardSchema = new mongoose.Schema({
 	upvotes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }]
 });
 
-mongoose.model('Card', CardSchema);
+var Card = mongoose.model('Card', CardSchema);
+
+module.exports = Card;

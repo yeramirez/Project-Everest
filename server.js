@@ -10,33 +10,28 @@ var morgan = require('morgan');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
-app.use('/', express.static('public'));
-
+// Route to our api
 app.use('/api', router);
+
+// Spit out useful information
 app.use(morgan('dev'));
 
+//Use the static directory of publc
 app.use(express.static(__dirname + '/public'));
+
+// Use views for our views
 app.set('views', __dirname + '/public');
+
+//Use html instead of ejs!!! YAS GIRL!
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
+// use the body parser stated above :-)
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 
 app.use(bodyParser.json());
-
-app.get('/landing', function (req, res) {
-  res.render('landing.html');
-});
-
-app.get('/index', function (req, res) {
-  res.render('index.html');
-});
-
-app.get('/dashboard', function (req, res) {
-	res.render('views/dashboard.html');
-});
 
 app.get('/api/todos', function (req, res, next) {
 	Todo.find()
@@ -63,14 +58,17 @@ app.delete('/api/todos/:id', function (req, res, next) {
 	});
 });
 
+// Connect to the database named choralapp
 mongoose.connect('mongodb://localhost/choralapp');
 
+// Console out the connection
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Connection Error: '))
 db.once('open', function() {
 	console.log('We are connected!');
 });
 
+// Shh, the port is listening... :-)
 app.listen(5000, function() {
 	console.log('Hello, coming in from Orlando on port 5000!');
 })

@@ -5,12 +5,13 @@ $primary-color: #4994FC
 $base-color: #212121
 $secondary-color: #F2F2F2
 $no-decoration: none
+$gradient: top,  #212121 0%, #31302c 100%
+$gradient-one: to bottom,  #212121 0%,#31302c 100%
 
 
 body
   font: 100% $font-stack
   color: $base-color
-
 
 /* ------------ Navigation ------------ */
 
@@ -35,7 +36,11 @@ nav a:hover a:active
 /* ------------ CTA ------------ */
 
 .cta-outer
-  background-color: $base-color
+  background: $base-color
+  background: -moz-linear-gradient($gradient)
+  background: -webkit-linear-gradient($gradient)
+  background: linear-gradient($gradient-one)
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#31302c',GradientType=0 )
   padding-bottom: 3%
 
 
@@ -47,6 +52,7 @@ nav a:hover a:active
   text-align: center
   color: $secondary-color
   text-transform: capitalize
+  background-color: transparent
 
 a 
   color: $secondary-color
@@ -119,9 +125,6 @@ footer, footer > nav > a
   
   .land-rows 
     padding: 30px
-  
-  .logo
-  padding-top: 20px
 
   article h2 
     text-align: center

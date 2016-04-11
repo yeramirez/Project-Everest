@@ -1,81 +1,25 @@
 <html>
-<head>
-	<title>Choral - Dashboard</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="styles/main.css">
-</head>
-<body ng-app="choralApp" ng-controller="MainCtrl">
-	<div class="row">
-		<div class="col-md-6 col-md-offset-3">
-			<ui-view></ui-view>
-		</div>
-	</div>
-
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
-	<script type="text/javascript" src="scripts/controllers/app.js"></script>
-	
-	<script type="text/ng-template" id="/home.html">
-		<div class="page-header">
-			<h1>Choral</h1>
-		</div>
-
-		<div>
-			{{main}}
-		</div>
-		<div ng-repeat="card in cards | orderBy: '-upvotes' ">
-			<span ng-click="addOne(card)">^</span>
-			{{card.lyrics}} - upvotes: {{card.upvotes}}
-			<a ng-show="card.link" href="{{card.link}}">
-				{{card.link}}
-			</a>
-			<span ng-hide="card.link">
-				{{card.link}}
-			</span>
-			<span>
-				<a href="#/cards/{{$index}}">Comments</a>
-			</span>
-		</div>
-
-		<form ng-submit="addCard()">
-			<input type="text" placeholder="Express yourself..." ng-model="lyrics"></input>
-			<input type="text" placeholder="Soundcloud Link" ng-model="link"></input>
-			<button type="submit">Post</button>
-		</form>
-	</script>
-
-	<script type="text/ng-template" id="/posts.html">
-		<div class="page-header">
-			<h3>
-				<a ng-show="card.link" href="{{card.link}}">
-					{{card.lyrics}}
-				</a>
-				<span ng-hide="card.link">
-					{{card.lyrics}}
-				</span>
-			</h3>
-		</div>
-
-		<div ng-repeat="comment in card.comments | orderBy: '-upvotes' ">
-			<span class="glyphicon glyphicon-thumbs-up" ng-click="addOne(comment)"></span>
-			{{comment.upvotes}} - by {{comment.author}}
-			<span style="font-size:20px; margin-left:10px">
-				{{comment.body}}
-			</span>
-		</div>
-
-		<form ng-submit="addComment()"
-		style="margin-top:30px">
-		<h3>Add a new comment</h3>
-
-		<div class="form-group">
-			<input type="text" class="form-control" placeholder="comment" ng-model="body">
-			</input>
-		</div>
-		<button type="submit" class="btn btn-primary">Post</button>
-
-		</form>
-	</script>
-</body>
+	<head>
+		<title>Choral</title>
+		<meta charset="utf-8">
+		<title>Choral Application</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="google-signin-client_id" content="38825868046-u1v5rvh3quhji1td6rblpg4phmt1t3lq.apps.googleusercontent.com">
+		<link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="styles/reset.css">
+		<link rel="stylesheet" type="text/css" href="styles/main.css">
+	</head>
+	<body ng-app="choralApp">
+		<div ui-view></div>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+		<script type="text/javascript" src="scripts/app.js"></script>
+		<script type="text/javascript" src="scripts/routes.js"></script>
+		<script type="text/javascript" src="scripts/controllers/factory.js"></script>
+		<script type="text/javascript" src="scripts/controllers/dashCtrl.js"></script>
+		<script type="text/javascript" src="scripts/controllers/cardCtrl.js"></script>
+		<script type="text/javascript" src="scripts/services/login.js"></script>
+		<script type="text/javascript" src="https://apis.google.com/js/platform.js" async defer></script>
+	</body>
 </html>
