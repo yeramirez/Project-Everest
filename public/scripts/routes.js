@@ -5,13 +5,20 @@ choral.config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/home',
-      templateUrl: 'views/home.html'
+      templateUrl: 'views/home.html',
+      controller: 'loginCtrl'
     })
 
     .state('dashboard', {
       url: '/dashboard',
       templateUrl: 'views/dashboard.html',
-      controller: 'dashCtrl'
+      controller: 'MainCtrl'
+    })
+
+    .state('create', {
+      url: '/create',
+      templateUrl: 'views/newPost.html',
+      controller: 'PostCtrl'
     })
 
   $urlRouterProvider.otherwise('dashboard');

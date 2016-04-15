@@ -1,12 +1,12 @@
-<div class="cta-outer">
+<div class="cta-outer" ng-controller="loginCtrl">
   <nav>
     <a href="#">About</a>
-    <a href="#" onclick="signOut();">Sign out</a>
+    <a href="#" ng-click="signUserOut();">Sign out</a>
   </nav>
   <div class="cta-inner">
     <img src="img/ramirez-logo.svg" class="logo" alt="Choral Logo"/>
     <h1>Let's Collaborate</h1>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <div class="g-signin2" ng-click="signUserIn"></div>
   </div>
 </div>
 <div>

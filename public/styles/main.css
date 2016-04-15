@@ -4,7 +4,7 @@ body {
   color: #212121; }
 
 /* ------------ Navigation ------------ */
-div nav {
+.cta-outer > nav {
   padding-top: 30px;
   padding-right: 10%;
   height: 25px;

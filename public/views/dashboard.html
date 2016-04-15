@@ -1,27 +1,9 @@
-<div ng-controller="dashCtrl">
-	<h2>hi, this is dash</h2>
-	<div>
-		<h1>Choral</h1>
-	</div>
-	<div>
-		{{main}}
-	</div>
-	<div ng-repeat="card in cards | orderBy: '-upvotes' ">
-		<span ng-click="addOne(card)">^</span>
-		{{card.lyrics}} - upvotes: {{card.upvotes}}
-		<a ng-show="card.link" href="{{card.link}}">
-			{{card.link}}
-		</a>
-		<span ng-hide="card.link">
-			{{card.link}}
-		</span>
-		<span>
-			<a href="#/cards/{{$index}}">Comments</a>
-		</span>
-	</div>
-	<form ng-submit="addCard()">
-		<input type="text" placeholder="Express yourself..." ng-model="lyrics"></input>
-		<input type="text" placeholder="Soundcloud Link" ng-model="link"></input>
-		<button type="submit">Post</button>
-	</form>
+<div >
+	<h1>Todos</h1>
+	<ul>
+		<li ng-repeat="post in posts">
+			{{post.title}} || {{post.lyrics}}
+		</li>
+	</ul>
+
 </div>
