@@ -1,9 +1,24 @@
-<div >
-	<h1>Todos</h1>
-	<ul>
-		<li ng-repeat="post in posts">
-			{{post.title}} || {{post.lyrics}}
-		</li>
-	</ul>
-
+<nav class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">Choral</a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse nav navbar-nav navbar-right">
+			<a href="#">Profile</a>
+			<a href="#">Create Magic</a>
+		</div><!--/.navbar-collapse -->
+	</div>
+</nav>
+<div class="container">
+	<h1>Feed</h1>
+		<div class="card col-md-4" ng-repeat="post in posts">
+			<p>{{ post.lyrics }}</p>
+			<h5>{{ post.author }} </h5>
+		</div>
 </div>

@@ -33,6 +33,10 @@ nav a:hover a:active
   text-decoration: $no-decoration
   color: $secondary-color
 
+#navbar > a:last-of-type
+  padding: 5px 3px
+  border: 2px solid black
+
 /* ------------ CTA ------------ */
 
 .cta-outer
@@ -54,9 +58,27 @@ nav a:hover a:active
   text-transform: capitalize
   background-color: transparent
 
-a 
-  color: $secondary-color
+a, a:hover, a:active
+  color: #3B3B3B
   text-decoration: $no-decoration
+
+.navbar-nav
+  padding: 15px
+
+.container > h1
+  text-align: center
+
+/* ------------ Feed ------------ */
+
+.card
+  height: 200px
+  width: 200px
+  background-color: $secondary-color
+  margin: 10px
+
+.card > p
+  font-family: 'Playfair Display', sans-serif
+  padding: 10px
 
 /* ------------ Body ------------ */
 

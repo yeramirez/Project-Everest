@@ -31,7 +31,6 @@ app.use(bodyParser.json());
 
 // create a database model
 var Post = mongoose.model('Post', {
-	title: String,
 	lyrics: String,
 	author: String
 });
@@ -47,7 +46,6 @@ app.get('/api/posts', function (req, res, next) {
 app.post('/api/posts', function (req, res, next) {
 	var post = new Post(
 		{
-			title: req.body.title,
 			lyrics: req.body.lyrics,
 			author: req.body.author
 		});
