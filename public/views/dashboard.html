@@ -18,7 +18,8 @@
 <div class="container">
 	<h1>Feed</h1>
 		<div class="card col-md-4" ng-repeat="post in posts">
+			<h5>{{ post.mood }}</h5>
 			<p>{{ post.lyrics }}</p>
-			<h5>{{ post.author }} </h5>
+			<h4>{{ post.author }} </h4>
 		</div>
 </div>

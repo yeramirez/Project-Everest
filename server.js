@@ -32,7 +32,8 @@ app.use(bodyParser.json());
 // create a database model
 var Post = mongoose.model('Post', {
 	lyrics: String,
-	author: String
+	author: String,
+	mood: String
 });
 
 app.get('/api/posts', function (req, res, next) {
@@ -47,13 +48,14 @@ app.post('/api/posts', function (req, res, next) {
 	var post = new Post(
 		{
 			lyrics: req.body.lyrics,
-			author: req.body.author
+			author: req.body.author,
+			mood: req.body.mood
 		});
 	
 	post.save(function(err, post) {
 		if (err) return next(err);
 		res.sendStatus(201);
-		console.log(`added ${post.title}`);
+		console.log(`added ${post.lyrics}`);
 	});
 });
 

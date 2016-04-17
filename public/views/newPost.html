@@ -1,5 +1,8 @@
 <form ng-submit='addPost()'>
-	<input ng-model='newPost.lyrics'>
-		<input ng-model='newPost.author'>
+	<input ng-model='newPost.lyrics' placeholder="lyrics">
+	<input ng-model='newPost.author' placeholder="author">
+	<select ng-model="newPost.mood">
+		<option value="happy">Happy</option>
+		<option value="sad">Sad</option>
 	<input type='submit' value='Add'>
 </form>
