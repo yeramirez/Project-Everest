@@ -66,6 +66,12 @@ a, a:hover, a:active {
   font-family: "Playfair Display", sans-serif;
   padding: 10px; }
 
+/* ------------ Card ------------ */
+.addCard {
+  height: 300px;
+  width: 300px;
+  margin: auto; }
+
 /* ------------ Body ------------ */
 .footer-cta {
   text-align: center;
