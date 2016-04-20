@@ -3,11 +3,12 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-var morgan = require('morgan')
+var morgan = require('morgan');
 
 var app = express();
 
 app.use(morgan('dev'));
+app.use('/bower_components',  express.static(__dirname + '/bower_components')); // Use BowerComponents
 
 // make the connection to your db
 mongoose.connect('mongodb://localhost/test');

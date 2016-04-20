@@ -1,5 +1,6 @@
 /* ------------ Variable Declarations ------------ */
 body {
+  background-color: #fafafa;
   font: 100% "Karla", sans-serif;
   color: #212121; }
 
@@ -23,8 +24,8 @@ nav a:hover a:active {
   color: #F2F2F2; }
 
 #navbar > a:last-of-type {
-  padding: 5px 3px;
-  border: 2px solid black; }
+  padding: 8px 6px;
+  border: 3px solid #212121; }
 
 /* ------------ CTA ------------ */
 .cta-outer {
@@ -55,22 +56,56 @@ a, a:hover, a:active {
 .container > h1 {
   text-align: center; }
 
+.login {
+  width: 150px;
+  height: 30px;
+  border-radius: 3px;
+  border: 2px #f9f9f9 solid;
+  background-color: transparent; }
+
 /* ------------ Feed ------------ */
 .card {
-  height: 200px;
-  width: 200px;
-  background-color: #F2F2F2;
-  margin: 10px; }
+  height: 235px;
+  width: 235px;
+  background-color: #ffffff;
+  margin: 10px;
+  -webkit-box-shadow: 14px 17px 40px -8px rgba(227, 227, 227, 0.7);
+  -moz-box-shadow: 14px 17px 40px -8px rgba(227, 227, 227, 0.7);
+  box-shadow: 14px 17px 40px -8px rgba(227, 227, 227, 0.7);
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border: 0px solid #000000; }
 
 .card > p {
-  font-family: "Playfair Display", sans-serif;
-  padding: 10px; }
+  font-family: "Georgia", sans-serif;
+  padding: 15px 10px;
+  font-size: 18px;
+  color: #4F514F; }
 
-/* ------------ Card ------------ */
+.card > h4 {
+  position: absolute;
+  bottom: 0;
+  width: 85%;
+  text-align: center; }
+
+/* ------------ New Card ------------ */
 .addCard {
   height: 300px;
-  width: 300px;
+  max-width: 500px;
+  width: 75%;
   margin: auto; }
+
+.addCard > button[type="submit"] {
+  background-color: #F2F2F2;
+  border-radius: 3px;
+  border: none;
+  color: #212121; }
+
+textarea {
+  outline: none;
+  resize: none;
+  overflow: none; }
 
 /* ------------ Body ------------ */
 .footer-cta {

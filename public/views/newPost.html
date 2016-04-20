@@ -17,8 +17,8 @@
 </nav>
 <form class="addCard" ng-submit='addPost()'>
 	<div>
-		<p>Lyrics - Character Limit 255</p>
-		<input ng-model='newPost.lyrics' placeholder="lyrics">
+		<p>Lyrics - Character Limit 150</p>
+		<textarea ng-model='newPost.lyrics' placeholder="Express yourself.." cols="30" rows="5" maxlength="150"></textarea>
 	</div>
 	<div>
 		<p>Author</p>
@@ -28,5 +28,6 @@
 	<select ng-model="newPost.mood">
 		<option value="happy">Happy</option>
 		<option value="sad">Sad</option>
-	<input type='submit' value='Add'>
+	</select>
+	<button type="submit">Post</button>
 </form>
