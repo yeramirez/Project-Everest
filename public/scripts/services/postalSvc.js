@@ -12,4 +12,8 @@ choral.service('PostSvc', function ($http) {
 	this.add = function (post) {
 		return $http.post('/api/posts', post);
 	};
+
+	this.delete = function (post) {
+		return $http.delete('/api/posts', post);
+	};
 });

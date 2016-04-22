@@ -4,6 +4,8 @@ var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
+var Post = require('models/Post.js');
+
 
 var app = express();
 
@@ -11,7 +13,7 @@ app.use(morgan('dev'));
 app.use('/bower_components',  express.static(__dirname + '/bower_components')); // Use BowerComponents
 
 // make the connection to your db
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/choralapp');
 
 //check the connection
 var db = mongoose.connection;
@@ -28,13 +30,13 @@ app.set('view engine', 'html');
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
 app.use(bodyParser.json());
 
-// create a database model
-var Post = mongoose.model('Post', {
-	lyrics: String,
-	author: String,
-	mood: String
+var User = mongoose.model('User', {
+	firstname: String,
+	lastname: String,
+	points: Number
 });
 
 app.get('/api/posts', function (req, res, next) {
@@ -50,7 +52,8 @@ app.post('/api/posts', function (req, res, next) {
 		{
 			lyrics: req.body.lyrics,
 			author: req.body.author,
-			mood: req.body.mood
+			mood: req.body.mood,
+			date: Date
 		});
 	
 	post.save(function(err, post) {

@@ -1,14 +1,8 @@
-<div class="cta-outer">
-  <nav>
-    <a href="#">About</a>
-    <a href="#" onclick="signOut();">Sign out</a>
-  </nav>
-  <div class="cta-inner">
-    <img src="img/ramirez-logo.svg" class="logo" alt="Choral Logo"/>
-    <h1>Let's Collaborate</h1>
-    <button type="submit" class="login" ng-controller="LoginCtrl" ng-click="auth.signin()">Sign Up</button>
-    <!-- <button ng-click="authenticate('google')">Sign in with Google</button> -->
-  </div>
+<div class="cta-inner">
+  <img src="img/ramirez-logo.svg" class="logo" alt="Choral Logo"/>
+  <h1>Let's Collaborate</h1>
+  <button type="submit" class="login" ng-controller="LoginCtrl" ng-click="auth.signin()">Sign Up</button>
+  <!-- <button ng-click="authenticate('google')">Sign in with Google</button> -->
 </div>
 <div>
   <div class="land-rows">
@@ -43,7 +37,7 @@
 <div class="footer-cta">
   <h2>JOIN NOW</h2>
   <p>Become a part of a creative community. Let's Collaborate!</p>
-  <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  <button type="submit" class="login" ng-controller="LoginCtrl" ng-click="auth.signin()">Sign Up</button>
 </div>
 <footer>
   <nav>
