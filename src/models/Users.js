@@ -1,11 +1,22 @@
-'use strict'
+'use strict';
 
+// Require our mongoose connection
 var mongoose = require('mongoose');
+// Set our schema to a var for easy access
+var Schema = mongoose.Schema;
 
-var UsersSchema = new mongoose.Schema({
-	name: String
+// Instantiate a new Schema for the Users
+var UserSchema = new Schema ({
+	firstname: String,
+	lastname: String,
+	points: Number,
+	followers: [],
+	following: [],
+	likes: {}
 });
 
-var Users = mongoose.model('User', UsersSchema);
+// Model compiling using our Schema!
+var Users = mongoose.model('User', UserSchema);
 
+// Don't forget to export, always
 module.exports = Users;

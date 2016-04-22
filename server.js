@@ -4,8 +4,8 @@ var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
-var Post = require('models/Post.js');
-
+var Post = require('./src/models/Post.js');
+var Users = require('./src/models/Users.js');
 
 var app = express();
 
@@ -33,12 +33,6 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-var User = mongoose.model('User', {
-	firstname: String,
-	lastname: String,
-	points: Number
-});
-
 app.get('/api/posts', function (req, res, next) {
 	Post.find()
 	.exec(function(err, posts) {
@@ -52,8 +46,7 @@ app.post('/api/posts', function (req, res, next) {
 		{
 			lyrics: req.body.lyrics,
 			author: req.body.author,
-			mood: req.body.mood,
-			date: Date
+			mood: req.body.mood
 		});
 	
 	post.save(function(err, post) {

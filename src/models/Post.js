@@ -3,15 +3,15 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var PostSchema = new Schema ({
+var PostsSchema = new Schema ({
 	lyrics: String,
 	author: String,
-	mood: String
+	mood: String,
 	upvotes: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
 	date: { type: Date, default: Date.now },
 	collab: { type: Boolean, default: true }
 });
 
-var Post = mongoose.model('Post', PostSchema);
+var Posts = mongoose.model('Post', PostsSchema);
 
-module.exports = Post;
+module.exports = Posts;

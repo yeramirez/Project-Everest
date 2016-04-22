@@ -12,4 +12,11 @@ choral.controller('PostCtrl', function ($scope, PostSvc) {
 			$scope.newPost = {};
 		});
 	}
+
+	$scope.removePost = function () {
+		PostSvc.delete($scope.post)
+		.then(function () {
+			$scope.posts.remove(post);
+		})
+	}
 })
