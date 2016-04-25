@@ -7,7 +7,6 @@ var morgan = require('morgan');
 var logger = require('express-logger');
 var Post = require('./src/models/Post.js');
 var Users = require('./src/models/Users.js');
-
 var app = express();
 
 app.use(logger({path: 'logfile.txt'}));
