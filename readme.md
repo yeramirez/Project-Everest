@@ -24,7 +24,7 @@ There is also a blog that will capture day-to-day adventures with Choral -- [Tak
 | D101          | User should be able to find informative information about Choral   	| Complete |
 | ----          | ------------------------------------------------------				| ---------- |
 | D200          | User should be able to log out      								   	| Complete |
-| D201          | User should be able to view feed										| Incomplete |
+| D201          | User should be able to view feed										| Complete |
 | D202          | User should be able to 'like' a post								   	| Complete |
 | D203          | User should be able to 'follow' another User							| Incomplete |
 | D204          | User should be able to 'collab' to another user's post			   	| Incomplete |
@@ -37,9 +37,8 @@ There is also a blog that will capture day-to-day adventures with Choral -- [Tak
 | D400          | User should be able to change their username							| Incomplete |
 | D401          | User should be able to see their profile picture					   	| Incomplete |
 | D402          | User should be able to see their amount of followers					| Incomplete |
-| D403          | User should be able to logout										  	| Incomplete |
 | ----          | ------------------------------------------------------				| ---------- |
-| D500          | User should be able to add their lyrics								| Incomplete |
-| D501          | User should be able to specify their mood							   	| Incomplete |
+| D500          | User should be able to add their lyrics								| Complete   |
+| D501          | User should be able to specify their mood							   	| Complete   |
 | D502          | User should be able to choose whether to allow collaboration or not	| Incomplete |
-| D503          | User should be able to post the post								  	| Incomplete |
+| D503          | User should be able to post the post								  	| Complete   |

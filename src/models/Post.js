@@ -7,9 +7,10 @@ var PostsSchema = new Schema ({
 	lyrics: String,
 	author: String,
 	mood: String,
-	upvotes: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
+	upvotes: { type: Number, default: 0 },
 	date: { type: Date, default: Date.now },
-	collab: { type: Boolean, default: true }
+	collab: { type: Boolean, default: true },
+	comments: Array
 });
 
 var Posts = mongoose.model('Post', PostsSchema);

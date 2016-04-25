@@ -27,4 +27,6 @@ choral.run(function ($rootScope, auth, store, jwtHelper, $location) {
       }
     }
   });
+
+  $rootScope.$on("$stateChangeError", console.log.bind(console));
 });
