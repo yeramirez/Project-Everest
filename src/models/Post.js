@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var PostsSchema = new Schema ({
+var PostSchema = new Schema ({
 	lyrics: String,
 	author: String,
 	mood: String,
@@ -13,6 +13,6 @@ var PostsSchema = new Schema ({
 	comments: Array
 });
 
-var Posts = mongoose.model('Post', PostsSchema);
+var Post = mongoose.model('Post', PostSchema);
 
-module.exports = Posts;
+module.exports = Post;

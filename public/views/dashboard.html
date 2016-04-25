@@ -5,6 +5,7 @@
 		</div>
 		<div id="navbar" class="navbar-collapse collapse nav navbar-nav navbar-right">
 			<a href="#/profile" ui-sref="profile">Profile</a>
+			<span>His name is {{auth.profile.nickname}}</span>
 			<input type="submit" ng-controller="LoginCtrl" ng-click="logout()" value="Log out" />
 			<a href="#/create" ui-sref="create">Create Magic</a>
 		</div>

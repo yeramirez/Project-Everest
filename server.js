@@ -35,6 +35,12 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
+var User = mongoose.model('User', {
+	firstname: String,
+	lastname: String,
+	points: Number
+});
+
 app.get('/api/posts', function (req, res, next) {
 	Post.find()
 	.exec(function(err, posts) {
