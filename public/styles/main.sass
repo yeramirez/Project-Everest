@@ -10,6 +10,7 @@ $gradient-one: to bottom,  #212121 0%,#31302c 100%
 
 
 body
+  background-color: #fafafa
   font: 100% $font-stack
   color: $base-color
 
@@ -33,15 +34,20 @@ nav a:hover a:active
   text-decoration: $no-decoration
   color: $secondary-color
 
+#navbar > a:last-of-type
+  padding: 8px 6px
+  border: 3px solid $base-color
+
 /* ------------ CTA ------------ */
 
-.cta-outer
+.cta-inner
   background: $base-color
   background: -moz-linear-gradient($gradient)
   background: -webkit-linear-gradient($gradient)
   background: linear-gradient($gradient-one)
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#31302c',GradientType=0 )
   padding-bottom: 3%
+  padding-top: 3%
 
 
 .logo
@@ -54,9 +60,68 @@ nav a:hover a:active
   text-transform: capitalize
   background-color: transparent
 
-a 
-  color: $secondary-color
+a, a:hover, a:active
+  color: #3B3B3B
   text-decoration: $no-decoration
+
+.navbar-nav
+  padding: 15px
+
+.container > h1
+  text-align: center
+
+.login
+  width: 150px
+  height: 30px
+  border-radius: 3px
+  border: 2px #f9f9f9 solid
+  background-color: transparent
+
+/* ------------ Feed ------------ */
+
+.card
+  height: 235px
+  width: 235px
+  background-color: #ffffff
+  margin: 10px
+  -webkit-box-shadow: 14px 17px 40px -8px rgba(227,227,227,0.7)
+  -moz-box-shadow: 14px 17px 40px -8px rgba(227,227,227,0.7)
+  box-shadow: 14px 17px 40px -8px rgba(227,227,227,0.7)
+  border-radius: 5px 5px 5px 5px
+  -moz-border-radius: 5px 5px 5px 5px
+  -webkit-border-radius: 5px 5px 5px 5px
+  border: 0px solid #000000
+
+.card > p
+  font-family: 'Georgia', sans-serif
+  padding: 15px 10px
+  font-size: 18px
+  color: #4F514F
+
+.card > h4
+  position: absolute
+  bottom: 0
+  width: 85%
+  text-align: center
+
+/* ------------ New Card ------------ */
+
+.addCard
+  height: 300px
+  max-width: 500px
+  width: 75%
+  margin: auto
+
+.addCard > button[type="submit"]
+  background-color: $secondary-color
+  border-radius: 3px
+  border: none
+  color: $base-color
+
+textarea
+  outline: none
+  resize: none
+  overflow: none
 
 /* ------------ Body ------------ */
 

@@ -1,11 +1,11 @@
 'use strict';
 
-// Make sure it's loaded
-console.log('Loaded the DataService');
-
-// Get the items at this endpoint
-choral.service('dataService', function() {
-	this.getLikes = function(cb) {
-		$http.get('/api/posts').then(cb);
-	}
-})
+choral.factory('users', ['$http', function ($http) {
+	return $http.get('http://localhost:5000/users')
+	.success(function (data) {
+		return data;
+	})
+	.error(function (err) {
+		return err;
+	})
+}]);

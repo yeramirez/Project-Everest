@@ -8,4 +8,4 @@ choral.factory('cards', ['$http', function ($http) {
 	.error(function (err) {
 		return err;
 	})
-}])
+}]);

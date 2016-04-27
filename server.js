@@ -3,14 +3,19 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-var morgan = require('morgan')
+var morgan = require('morgan');
+var logger = require('express-logger');
+var Post = require('./src/models/Post.js');
+var Users = require('./src/models/Users.js');
 
 var app = express();
 
+app.use(logger({path: 'logfile.txt'}));
 app.use(morgan('dev'));
+app.use('/bower_components',  express.static(__dirname + '/bower_components')); // Use BowerComponents
 
 // make the connection to your db
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/choralapp');
 
 //check the connection
 var db = mongoose.connection;
@@ -27,14 +32,8 @@ app.set('view engine', 'html');
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-app.use(bodyParser.json());
 
-// create a database model
-var Post = mongoose.model('Post', {
-	title: String,
-	lyrics: String,
-	author: String
-});
+app.use(bodyParser.json());
 
 app.get('/api/posts', function (req, res, next) {
 	Post.find()
@@ -47,17 +46,19 @@ app.get('/api/posts', function (req, res, next) {
 app.post('/api/posts', function (req, res, next) {
 	var post = new Post(
 		{
-			title: req.body.title,
 			lyrics: req.body.lyrics,
-			author: req.body.author
+			author: req.body.author,
+			mood: req.body.mood,
+			comments: req.body.comments
 		});
 	
 	post.save(function(err, post) {
 		if (err) return next(err);
 		res.sendStatus(201);
-		console.log(`added ${post.title}`);
+		console.log(`added ${post.lyrics}`);
 	});
 });
+
 
 app.delete('/api/posts/:id', function (req, res, next) {
 	Post.find(req.params.id, function (err, post) {

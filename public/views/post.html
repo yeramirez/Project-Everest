@@ -1,0 +1,22 @@
+<nav class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#/dashboard">Choral</a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse nav navbar-nav navbar-right">
+			<a href="#/profile" ui-sref="profile">Profile</a>
+			<input type="submit" ng-controller="LoginCtrl" ng-click="logout()" value="Log out" />
+			<a href="#/create" ui-sref="create">Create Magic</a>
+		</div>
+	</div>
+</nav>
+<div class="container">
+	<h1>Feed</h1>
+		<div class="card col-xs-6 col-md-4" ng-repeat="post in posts">
+			<h5>{{ post.mood }}</h5>
+			<p>{{ post.lyrics }}</p>
+			<h4>{{ post.author }} </h4>
+			<span>{{ post.upvotes }}</span>
+			<span ng-click="addOne(post)">^</span>
+		</div>
+</div>
