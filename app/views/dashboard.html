@@ -1,0 +1,39 @@
+<nav class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Choral</a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse nav navbar-nav navbar-right">
+			<a href="#/profile" ui-sref="profile">Profile</a>
+			<input type="submit" ng-controller="LoginCtrl" ng-click="logout()" value="Log out" />
+			<a href="#/create" ui-sref="create"><md-button class="md-raised md-primary">Create Magic</md-button></a>
+		</div><!--/.navbar-collapse -->
+	</div>
+</nav>
+<!-- <div class="container">
+	<h1>Feed</h1>
+		<div class="card col-xs-6 col-md-4" ng-repeat="post in posts">
+			<h5>{{ post.mood }}</h5>
+			<p>{{ post.lyrics }}</p>
+			<h4>{{ post.author }} </h4>
+		</div>
+</div> -->
+
+
+<div ng-cloak>
+	<md-card class="card col-xs-6 col-md-4" ng-repeat="post in posts">
+		<ng-md-icon icon="format_quote" style="fill:#212121" size="24"></ng-md-icon>
+		<md-card-title>
+			<md-card-title-text>
+				<span class="md-title">{{post.author}}</span>
+				<span class="md-subhead">{{post.mood}}</span>
+			</md-card-title-text>
+		</md-card-title>
+		<ng-md-icon icon="favorite" style="fill:#212121" size="24"></ng-md-icon>
+		<md-card-content>
+			<p>
+				{{post.lyrics}}
+			</p>
+		</md-card-content>
+	</md-card>
+</div>

@@ -1,0 +1,37 @@
+<nav class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#/dashboard">Choral</a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse nav navbar-nav navbar-right">
+			<a href="#">Profile</a>
+			<a href="#/create" ui-sref="create">Create Magic</a>
+		</div><!--/.navbar-collapse -->
+	</div>
+</nav>
+
+<form class="addCard" ng-submit='addPost()'>
+	<div>
+		<md-input-container class="md-block">
+			<label>Lyrics - Character Limit 150</label>
+			<textarea ng-model="newPost.lyrics" md-maxlength="150" rows="3" md-select-on-focus></textarea>
+		</md-input-container>
+	</div>
+	<md-input-container class="md-block" flex-gt-sm>
+		<label>Author</label>
+		<input ng-model="newPost.author">
+	</md-input-container>
+	<md-input-container>
+        <label>Select Mood</label>
+        <md-select ng-model="newPost.mood">
+          <md-option ng-repeat="mood in moods" value="{{mood}}">{{mood}}</md-option>
+        </md-select>
+      </md-input-container>
+	<md-button class="md-raised" type="submit">Post</md-button>
+</form>
