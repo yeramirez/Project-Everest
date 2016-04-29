@@ -4,11 +4,12 @@ var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
+var logger = require('express-logger');
 var Post = require('./src/models/Post.js');
 var Users = require('./src/models/Users.js');
-
 var app = express();
 
+app.use(logger({path: 'logfile.txt'}));
 app.use(morgan('dev'));
 app.use('/bower_components',  express.static(__dirname + '/bower_components')); // Use BowerComponents
 
@@ -33,6 +34,12 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
+var User = mongoose.model('User', {
+	firstname: String,
+	lastname: String,
+	points: Number
+});
+
 app.get('/api/posts', function (req, res, next) {
 	Post.find()
 	.exec(function(err, posts) {
@@ -46,7 +53,8 @@ app.post('/api/posts', function (req, res, next) {
 		{
 			lyrics: req.body.lyrics,
 			author: req.body.author,
-			mood: req.body.mood
+			mood: req.body.mood,
+			comments: req.body.comments
 		});
 	
 	post.save(function(err, post) {
@@ -55,6 +63,7 @@ app.post('/api/posts', function (req, res, next) {
 		console.log(`added ${post.lyrics}`);
 	});
 });
+
 
 app.delete('/api/posts/:id', function (req, res, next) {
 	Post.find(req.params.id, function (err, post) {

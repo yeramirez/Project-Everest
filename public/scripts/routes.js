@@ -1,5 +1,4 @@
 choral.config(function ($stateProvider, $urlRouterProvider, authProvider, $httpProvider, jwtInterceptorProvider) {
-
   // Initial configurations for my google authentication
   authProvider.init({
     domain: 'yeramirez.auth0.com',
@@ -36,12 +35,19 @@ choral.config(function ($stateProvider, $urlRouterProvider, authProvider, $httpP
 
     Setting up our states 
    */
+   console.log('monkeys');
   $stateProvider
     .state('home', {
       url: '/home',
       templateUrl: 'views/home.html',
       controller: 'LoginCtrl'
     })
+
+    .state('joe', {
+      url: '/joe',
+      templateUrl: 'views/joe.html',
+    })
+
 
     .state('dashboard', {
       url: '/dashboard',

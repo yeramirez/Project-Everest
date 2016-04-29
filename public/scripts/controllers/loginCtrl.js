@@ -1,6 +1,5 @@
-console.log('loginCtrl has loaded')
 choral.controller('LoginCtrl', function ($scope, auth, store) {
-	
+	console.log('CONTROLLER HAS LOADED');
 	$scope.auth = auth;
 
 	$scope.logout = function() {
