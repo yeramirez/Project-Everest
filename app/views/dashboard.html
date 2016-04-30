@@ -1,28 +1,37 @@
-<nav class="navbar navbar-default">
+<nav class="navbar">
 	<div class="container">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="#">Choral</a>
+			<a class="navbar-brand" href="#/dashboard">Choral</a>
 		</div>
 		<div id="navbar" class="navbar-collapse collapse nav navbar-nav navbar-right">
-			<a href="#/profile" ui-sref="profile">Profile</a>
-			<input type="submit" ng-controller="LoginCtrl" ng-click="logout()" value="Log out" />
-			<a href="#/create" ui-sref="create"><md-button class="md-raised md-primary">Create Magic</md-button></a>
+      <md-menu>
+        <!-- Trigger element is a md-button with an icon -->
+        <span ng-click="$mdOpenMenu($event)">Menu</span>
+        <md-menu-content>
+          <md-menu-item>
+            <md-button class="md-primary">
+              <span><a href="#/profile" ui-sref="profile">Profile</a></span>
+            </md-button>
+
+          </md-menu-item>
+          <md-menu-item>
+            <md-button type="submit" class="md-warn" ng-controller="LoginCtrl" ng-click="logout()">
+              Log Out
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+      <a href="#/create" ui-sref="create"><md-button class="md-raised md-primary">Create Magic</md-button></a>
 		</div><!--/.navbar-collapse -->
 	</div>
 </nav>
-<!-- <div class="container">
-	<h1>Feed</h1>
-		<div class="card col-xs-6 col-md-4" ng-repeat="post in posts">
-			<h5>{{ post.mood }}</h5>
-			<p>{{ post.lyrics }}</p>
-			<h4>{{ post.author }} </h4>
-		</div>
-</div> -->
 
 
-<div ng-cloak>
+
+<div class="dashboard">
 	<md-card class="card col-xs-6 col-md-4" ng-repeat="post in posts">
-		<ng-md-icon icon="format_quote" style="fill:#212121" size="24"></ng-md-icon>
+		<i class="material-icons">favorite</i>
+
 		<md-card-title>
 			<md-card-title-text>
 				<span class="md-title">{{post.author}}</span>

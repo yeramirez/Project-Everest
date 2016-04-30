@@ -10,7 +10,6 @@ $gradient-one: to bottom,  #212121 0%,#31302c 100%
 
 
 body
-  background-color: #fafafa
   font: 100% $font-stack
   color: $base-color
 
@@ -26,29 +25,19 @@ body
 div nav a:first-of-type
   padding-right: 20px
 
-.g-signin2
-  display: inline-block
-  padding-top: 20px
-
 nav a:hover a:active
   text-decoration: $no-decoration
   color: $secondary-color
 
-#navbar > a:last-of-type
-  padding: 8px 6px
-  border: 3px solid $base-color
+md-menu > span
+  margin-top: 10px
+
+.navbar-header > a
+  text-transform: uppercase
+  font-size: 1.5em
+  font-weight: bold
 
 /* ------------ CTA ------------ */
-
-.cta-inner
-  background: $base-color
-  background: -moz-linear-gradient($gradient)
-  background: -webkit-linear-gradient($gradient)
-  background: linear-gradient($gradient-one)
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#31302c',GradientType=0 )
-  padding-bottom: 3%
-  padding-top: 3%
-
 
 .logo
   width: 200px
@@ -58,24 +47,23 @@ nav a:hover a:active
   text-align: center
   color: $secondary-color
   text-transform: capitalize
-  background-color: transparent
+  background-color: $base-color
+  padding: 3%
 
 a, a:hover, a:active
   color: #3B3B3B
   text-decoration: $no-decoration
 
-.navbar-nav
-  padding: 15px
-
 .container > h1
   text-align: center
 
-.login
-  width: 150px
-  height: 30px
-  border-radius: 3px
-  border: 2px #f9f9f9 solid
-  background-color: transparent
+.md-button span
+  font-size: 1.3em
+  padding: 20px
+
+.md-menu
+  padding: 0 18px
+
 
 /* ------------ Feed ------------ */
 
@@ -104,13 +92,14 @@ a, a:hover, a:active
   width: 85%
   text-align: center
 
+
 /* ------------ New Card ------------ */
 
 .addCard
   height: 300px
   max-width: 500px
   width: 75%
-  margin: auto
+  margin: 5% auto
 
 .addCard > button[type="submit"]
   background-color: $secondary-color
@@ -123,79 +112,69 @@ textarea
   resize: none
   overflow: none
 
+.mood
+  width: 136px
+
+.dashboard
+  max-width: 1020px
+  margin: 0 auto
+
 /* ------------ Body ------------ */
 
-.footer-cta 
+.footer-cta
   text-align: center
   background-color: $secondary-color
-  padding: 25px 
+  padding: 25px
 
 
-.footer-cta h2 
+.footer-cta h2
   font-weight: bold
 
 
-.footer-cta p 
-  margin-top: 10px 
+.footer-cta p
+  margin-top: 10px
 
+.footer-cta > button
+  margin-top: 1%
 
-.footer-cta button 
-  height: 40px
-  width: 120px
-  margin-top: 20px
-  font-size: 20px
-  font-weight: bold
-  border: 2px solid $primary-color
-  border-radius: 2px
-  background-color: transparent
-
-
-footer, footer > nav > a 
+footer, footer > nav > a
   text-align: center
   margin: 20px
   color: $base-color
 
-.index-icon 
+.index-icon
   height: 150px
 
-@media (min-width: 550px) 
-  .share, .like 
+@media (min-width: 550px)
+  .share, .like
     float: right
     padding-left: 20px
-  
 
-  .collab, .follow 
+
+  .collab, .follow
     float: left
     padding-right: 20px
-  
 
-  .land-rows 
+
+  .land-rows
     max-width: 1020px
     height: 200px
     padding-left: 7%
     padding-right: 7%
     margin: 20px auto
-  
 
-  .land-rows > article 
+
+  .land-rows > article
     padding-top: 20px
-  
 
-
-@media (max-width: 549px) 
-  .index-icon 
+@media (max-width: 549px)
+  .index-icon
     margin: auto
     height: 100px
     display: block
-  
-  .land-rows 
+
+  .land-rows
     padding: 30px
 
-  article h2 
+  article h2
     text-align: center
-  
-
-
-
-
-

@@ -1,7 +1,7 @@
 'use strict';
 console.log('MainCtrl loaded');
 
-choral.controller('MainCtrl', ['$scope', 'cards', function ($scope, cards, auth) {
+choral.controller('MainCtrl', ['$scope', 'cards', function ($scope, cards, auth, $mdOpenMenu) {
 	cards.success(function (data) {
 		$scope.posts = data;
 	});
@@ -10,5 +10,4 @@ choral.controller('MainCtrl', ['$scope', 'cards', function ($scope, cards, auth)
 		// adds one
 		posts.upvotes += 1;
 	};
-
 }]);

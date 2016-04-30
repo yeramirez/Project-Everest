@@ -2,7 +2,7 @@
 
 console.log('PostCtrl controller has loaded');
 
-choral.controller('PostCtrl', function ($scope, PostSvc) {
+choral.controller('PostCtrl', function ($scope, PostSvc, $mdDialog) {
 	$scope.posts = [];
 
 	$scope.addPost = function () {

@@ -3,8 +3,14 @@ choral.config(function (
   $urlRouterProvider,
   authProvider,
   $httpProvider,
-  jwtInterceptorProvider
+  jwtInterceptorProvider,
+  $mdThemingProvider,
+  $mdIconProvider
   ) {
+
+  $mdIconProvider
+    .iconSet("call", 'img/icons/sets/communication-icons.svg', 24)
+    .iconSet("social", 'img/icons/sets/social-icons.svg', 24);
 
   // Initial configurations for my google authentication
   authProvider.init({
@@ -29,6 +35,8 @@ choral.config(function (
     alert("I/'m sorry. We could not identify you. Please try again.");
     $location.path('/home');
   });
+
+  $mdThemingProvider.theme('default').primaryPalette('blue').accentPalette('pink');
 
   // Configuring the jwtInterceptor to always send the JWT
   jwtInterceptorProvider.tokenGetter = ['store', function(store) {
