@@ -1,4 +1,17 @@
-choral.config(function ($stateProvider, $urlRouterProvider, authProvider, $httpProvider, jwtInterceptorProvider) {
+choral.config(function (
+  $stateProvider,
+  $urlRouterProvider,
+  authProvider,
+  $httpProvider,
+  jwtInterceptorProvider,
+  $mdThemingProvider,
+  $mdIconProvider
+  ) {
+
+  $mdIconProvider
+    .iconSet("call", 'img/icons/sets/communication-icons.svg', 24)
+    .iconSet("social", 'img/icons/sets/social-icons.svg', 24);
+
   // Initial configurations for my google authentication
   authProvider.init({
     domain: 'yeramirez.auth0.com',
@@ -19,8 +32,11 @@ choral.config(function ($stateProvider, $urlRouterProvider, authProvider, $httpP
   // What to do in the case of a failure
   authProvider.on('loginFailure', function() {
     console.log("Login Failed.");
-    alert("I/'m sorry. We could not identify you. Please try again.");
+    alert("I'm sorry. We could not identify you. Please try again.");
+    $location.path('/home');
   });
+
+  $mdThemingProvider.theme('default').primaryPalette('blue').accentPalette('deep-purple');
 
   // Configuring the jwtInterceptor to always send the JWT
   jwtInterceptorProvider.tokenGetter = ['store', function(store) {
@@ -30,29 +46,17 @@ choral.config(function ($stateProvider, $urlRouterProvider, authProvider, $httpP
 
   $httpProvider.interceptors.push('jwtInterceptor');
 
-  /* 
-    We are using ui.router for this routing
-
-    Setting up our states 
-   */
-   console.log('monkeys');
   $stateProvider
     .state('home', {
       url: '/home',
-      templateUrl: 'views/home.html',
+      templateUrl: 'components/home/home.tpl.html',
       controller: 'LoginCtrl'
     })
 
-    .state('joe', {
-      url: '/joe',
-      templateUrl: 'views/joe.html',
-    })
-
-
     .state('dashboard', {
       url: '/dashboard',
-      templateUrl: 'views/dashboard.html',
-      controller: 'MainCtrl',
+      templateUrl: 'components/dashboard/dashboard.tpl.html',
+      controller: 'DashboardCtrl',
       data: {
         requiresLogin: true
       }
@@ -60,7 +64,7 @@ choral.config(function ($stateProvider, $urlRouterProvider, authProvider, $httpP
 
     .state('create', {
       url: '/create',
-      templateUrl: 'views/newPost.html',
+      templateUrl: 'components/create/create.tpl.html',
       controller: 'PostCtrl',
       data: {
         requiresLogin: true
@@ -69,14 +73,14 @@ choral.config(function ($stateProvider, $urlRouterProvider, authProvider, $httpP
 
     .state('profile', {
       url: '/profile',
-      templateUrl: 'views/profile.html',
+      templateUrl: 'components/profile/profile.tpl.html',
       controller: 'ProfileCtrl',
       data: {
         requiresLogin: true
       }
     })
 
-  $urlRouterProvider.otherwise('home');
+  $urlRouterProvider.otherwise('dashboard');
 
 });
 

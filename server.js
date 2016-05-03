@@ -1,31 +1,20 @@
 'use strict';
 
+require('dotenv').config();
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
-var logger = require('express-logger');
-var Post = require('./src/models/Post.js');
-var Users = require('./src/models/Users.js');
+var http = require('http');
 
 var app = express();
 
-app.use(logger({path: 'logfile.txt'}));
 app.use(morgan('dev'));
 app.use('/bower_components',  express.static(__dirname + '/bower_components')); // Use BowerComponents
+app.use('/node_modules',  express.static(__dirname + '/node_modules')); // Use Node Modules
 
-// make the connection to your db
-mongoose.connect('mongodb://localhost/choralapp');
-
-//check the connection
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'Connection error: '));
-db.once('open', function() {
-	console.log('We are connected to test!');
-});
-
-app.use(express.static(__dirname + '/public'));
-app.set('views', __dirname + '/public/views');
+app.use(express.static(__dirname + '/app'));
+app.set('views', __dirname + '/app/views');
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
@@ -35,41 +24,18 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-app.get('/api/posts', function (req, res, next) {
-	Post.find()
-	.exec(function(err, posts) {
-		if (err) return next(err);
-		res.json(posts);
-	});
-});
-
-app.post('/api/posts', function (req, res, next) {
-	var post = new Post(
-		{
-			lyrics: req.body.lyrics,
-			author: req.body.author,
-			mood: req.body.mood,
-			comments: req.body.comments
-		});
-	
-	post.save(function(err, post) {
-		if (err) return next(err);
-		res.sendStatus(201);
-		console.log(`added ${post.lyrics}`);
-	});
-});
+//routes
+var posts = require('./src/api/posts.controller.js');
+var users = require('./src/api/user.controller.js');
+app.use('/api/posts', posts);
+app.use('/api/users', users);
 
 
-app.delete('/api/posts/:id', function (req, res, next) {
-	Post.find(req.params.id, function (err, post) {
-		if (err) return next(err);
-		res.sendStatus(201);
-		console.log('Deleted Successfully!');
-	});
-});
-
-app.use(express.static('public'));
 
 // listen on $PORT or 3000
 // this makes the app work on heroku
-app.listen(process.env.PORT || 5000);
+var port = process.env.PORT || 5000;
+
+http.createServer(app).listen(port, function (err) {
+  console.log('Coming to you from Orlando from port ' + port);
+});

@@ -1,0 +1,65 @@
+<md-toolbar class="container-fluid">
+  <div class="md-toolbar-tools">
+    <h2>
+      <span class="brand" ui-sref="dashboard">Choral</span>
+    </h2>
+
+    <span flex></span>
+    <md-button
+      class="md-raised md-primary"
+      aria-label="New Post"
+      ui-sref="create"
+      ng-if="toolbar.auth.isAuthenticated">
+      New Post
+    </md-button>
+    <div layout="row">
+      <div>
+        <md-menu-bar>
+          <md-menu>
+            <button class="bar-link" ng-click="$mdOpenMenu()">
+              Options
+            </button>
+            <md-menu-content>
+              <md-menu-item>
+                <md-button
+                  aria-label="New Post"
+                  ui-sref="create"
+                  ng-if="toolbar.auth.isAuthenticated">
+                  New Post
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button
+                  aria-label="Dashboard"
+                  ui-sref="dashboard"
+                  ng-if="toolbar.auth.isAuthenticated">
+                  Dashboard
+                </md-button>
+              </md-menu-item>
+              <md-menu-divider></md-menu-divider>
+              <md-menu-item>
+                <md-button
+                  aria-label="Profile"
+                  class="md-primary"
+                  ui-sref="profile"
+                  ng-if="toolbar.auth.isAuthenticated">
+                  Profile
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button
+                  aria-label="Logout"
+                  type="submit"
+                  class="md-warn"
+                  ng-click="toolbar.logout()"
+                  ng-if="toolbar.auth.isAuthenticated">
+                  Log Out
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+        </md-menu-bar>
+      </div>
+    </div>
+  </div>
+</md-toolbar>

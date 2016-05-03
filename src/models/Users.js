@@ -9,10 +9,12 @@ var Schema = mongoose.Schema;
 var UserSchema = new Schema ({
 	firstname: String,
 	lastname: String,
+	bio: String,
 	points: Number,
 	followers: [],
 	following: [],
-	likes: {}
+	likes: {},
+	isFollowing: { type: Boolean, default: false}
 });
 
 // Model compiling using our Schema!
