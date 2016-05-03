@@ -1,7 +1,7 @@
 'use strict';
-console.log('MainCtrl loaded');
+console.log('DashboardCtrl loaded');
 
-choral.controller('MainCtrl', ['$scope', 'cards', function ($scope, cards, auth, $mdOpenMenu) {
+choral.controller('DashboardCtrl', ['$scope', 'cards', function ($scope, cards, auth, $mdOpenMenu) {
 	cards.success(function (data) {
 		$scope.posts = data;
 	});

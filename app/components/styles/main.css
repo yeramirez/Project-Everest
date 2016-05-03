@@ -11,20 +11,10 @@ body {
   margin-bottom: 5%;
   text-align: right; }
 
-div nav a:first-of-type {
-  padding-right: 20px; }
-
-nav a:hover a:active {
-  text-decoration: none;
-  color: #F2F2F2; }
-
-md-menu > span {
-  margin-top: 10px; }
-
-.navbar-header > a {
-  text-transform: uppercase;
-  font-size: 1.5em;
-  font-weight: bold; }
+.brand {
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer; }
 
 /* ------------ CTA ------------ */
 .logo {
@@ -46,25 +36,30 @@ a, a:hover, a:active {
   text-align: center; }
 
 .md-button span {
-  font-size: 1.3em;
-  padding: 20px; }
+  font-size: 1.3em; }
 
 .md-menu {
   padding: 0 18px; }
 
 /* ------------ Feed ------------ */
 .card {
+  background: #fff;
+  border-radius: 2px;
+  display: block;
+  float: left;
   height: 300px;
-  width: 235px;
-  background-color: #ffffff;
-  margin: 10px;
-  -webkit-box-shadow: 14px 17px 40px -8px rgba(227, 227, 227, 0.7);
-  -moz-box-shadow: 14px 17px 40px -8px rgba(227, 227, 227, 0.7);
-  box-shadow: 14px 17px 40px -8px rgba(227, 227, 227, 0.7);
-  border-radius: 5px 5px 5px 5px;
-  -moz-border-radius: 5px 5px 5px 5px;
-  -webkit-border-radius: 5px 5px 5px 5px;
-  border: 0px solid #000000; }
+  margin: 1rem;
+  position: relative;
+  width: 300px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+
+.card:hover {
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
 
 .card > p {
   font-family: "Georgia", sans-serif;
@@ -100,7 +95,7 @@ textarea {
   width: 136px; }
 
 .dashboard {
-  max-width: 1020px;
+  max-width: 1040px;
   margin: 0 auto; }
 
 /* ------------ Body ------------ */
@@ -125,6 +120,16 @@ footer, footer > nav > a {
 
 .index-icon {
   height: 150px; }
+
+/* ----------- Profile ----------- */
+.profile {
+  text-align: center;
+  max-width: 1040px;
+  border-bottom: 1px solid #212121;
+  margin: 0 auto; }
+
+.profile > img {
+  height: 225px; }
 
 @media (min-width: 550px) {
   .share, .like {

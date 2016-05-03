@@ -25,5 +25,14 @@ choral.controller('PostCtrl', function ($scope, PostSvc, $mdDialog) {
 		"Sad",
 		"Angry",
 		"Hopeful"
-	];
+	]
+
+  $scope.data = {
+    cb1: true
+  }
+
+  $scope.message = 'false';
+  $scope.onChange = function(cbState) {
+  	$scope.message = cbState;
+  };
 })

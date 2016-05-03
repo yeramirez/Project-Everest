@@ -32,11 +32,11 @@ choral.config(function (
   // What to do in the case of a failure
   authProvider.on('loginFailure', function() {
     console.log("Login Failed.");
-    alert("I/'m sorry. We could not identify you. Please try again.");
+    alert("I'm sorry. We could not identify you. Please try again.");
     $location.path('/home');
   });
 
-  $mdThemingProvider.theme('default').primaryPalette('blue').accentPalette('pink');
+  $mdThemingProvider.theme('default').primaryPalette('blue').accentPalette('deep-purple');
 
   // Configuring the jwtInterceptor to always send the JWT
   jwtInterceptorProvider.tokenGetter = ['store', function(store) {
@@ -49,14 +49,14 @@ choral.config(function (
   $stateProvider
     .state('home', {
       url: '/home',
-      templateUrl: 'views/home.html',
+      templateUrl: 'components/home/home.tpl.html',
       controller: 'LoginCtrl'
     })
 
     .state('dashboard', {
       url: '/dashboard',
-      templateUrl: 'views/dashboard.html',
-      controller: 'MainCtrl',
+      templateUrl: 'components/dashboard/dashboard.tpl.html',
+      controller: 'DashboardCtrl',
       data: {
         requiresLogin: true
       }
@@ -64,7 +64,7 @@ choral.config(function (
 
     .state('create', {
       url: '/create',
-      templateUrl: 'views/create.html',
+      templateUrl: 'components/create/create.tpl.html',
       controller: 'PostCtrl',
       data: {
         requiresLogin: true
@@ -73,7 +73,7 @@ choral.config(function (
 
     .state('profile', {
       url: '/profile',
-      templateUrl: 'views/profile.html',
+      templateUrl: 'components/profile/profile.tpl.html',
       controller: 'ProfileCtrl',
       data: {
         requiresLogin: true
