@@ -3,33 +3,38 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var router = express.Router();
+var Card = require('../models/Card.js');
+var Comments = require('../models/Comments.js');
 var db = require('../db');
-var Post = require('../models/Post.js');
 
 router.get('/', function (req, res, next) {
-	Post.find()
-	.exec(function(err, posts) {
-		if (err) return next(err);
-		res.json(posts);
-	});
+	Card.find(function (err, cards) {
+    if(err) {
+      return next(err);
+    }
+    res.json(cards);
+  });
 });
 
 router.post('/', function (req, res, next) {
-	var post = new Post({
+  console.log("---------- The Body ----------");
+  console.log(req.body);
+	var card = new Card({
 			lyrics: req.body.lyrics,
 			author: req.body.author,
-			mood: req.body.mood
+			mood: req.body.mood,
+      collab: req.body.collab
 		});
-	
-	post.save(function(err, post) {
+
+	card.save(function(err, card) {
 		if (err) return next(err);
 		res.sendStatus(201);
-		console.log(`added ${post.lyrics}`);
+		console.log(`added ${card.lyrics}`);
 	});
 });
 
 router.delete('/:id', function (req, res, next) {
-	Post.find(req.params.id, function (err, post) {
+	Card.find(req.params.id, function (err, card) {
 		if (err) return next(err);
 		res.sendStatus(201);
 		console.log('Deleted Successfully!');

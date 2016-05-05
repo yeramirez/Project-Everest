@@ -1,13 +1,16 @@
 'use strict';
 console.log('DashboardCtrl loaded');
 
-choral.controller('DashboardCtrl', ['$scope', 'cards', function ($scope, cards, auth, $mdOpenMenu) {
+choral.controller('DashboardCtrl', ['$scope', 'cards', 'auth', function ($scope, cards, auth, $mdOpenMenu) {
+
+  $scope.profile = auth.profile;
+
 	cards.success(function (data) {
-		$scope.posts = data;
+		$scope.cards = data;
 	});
 
-	$scope.addOne = function(posts) {
+	$scope.addOne = function(cards) {
 		// adds one
-		posts.upvotes += 1;
+		cards.upvotes += 1;
 	};
 }]);

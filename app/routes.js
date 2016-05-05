@@ -36,7 +36,7 @@ choral.config(function (
     $location.path('/home');
   });
 
-  $mdThemingProvider.theme('default').primaryPalette('blue').accentPalette('deep-purple');
+  $mdThemingProvider.theme('default').primaryPalette('blue').accentPalette('pink');
 
   // Configuring the jwtInterceptor to always send the JWT
   jwtInterceptorProvider.tokenGetter = ['store', function(store) {
@@ -65,7 +65,7 @@ choral.config(function (
     .state('create', {
       url: '/create',
       templateUrl: 'components/create/create.tpl.html',
-      controller: 'PostCtrl',
+      controller: 'CreateCtrl',
       data: {
         requiresLogin: true
       }

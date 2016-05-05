@@ -25,9 +25,9 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 //routes
-var posts = require('./src/api/posts.controller.js');
+var cards = require('./src/api/cards.controller.js');
 var users = require('./src/api/user.controller.js');
-app.use('/api/posts', posts);
+app.use('/api/cards', cards);
 app.use('/api/users', users);
 
 

@@ -3,10 +3,9 @@
     <h2>
       <span class="brand" ui-sref="dashboard">Choral</span>
     </h2>
-
     <span flex></span>
     <md-button
-      class="md-raised md-primary"
+      class="md-raised md-accent"
       aria-label="New Post"
       ui-sref="create"
       ng-if="toolbar.auth.isAuthenticated">
@@ -40,7 +39,6 @@
               <md-menu-item>
                 <md-button
                   aria-label="Profile"
-                  class="md-primary"
                   ui-sref="profile"
                   ng-if="toolbar.auth.isAuthenticated">
                   Profile

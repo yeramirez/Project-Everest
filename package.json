@@ -4,6 +4,7 @@
   "description": "Project Everest",
   "main": "server.js",
   "scripts": {
+    "start": "server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Yanely Ramirez",
