@@ -80,6 +80,10 @@ choral.config(function (
       }
     })
 
+    .state('cardDetail', {
+      url: '/party/:partyID/:partyLocation'
+    });
+
   $urlRouterProvider.otherwise('dashboard');
 
 });

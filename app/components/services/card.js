@@ -1,6 +1,6 @@
 'use strict';
 
-choral.factory('cards', ['$http', function ($http) {
+choral.factory('cards', function ($http) {
 	return $http.get('http://localhost:5000/api/cards')
 	.success(function (data) {
 		return data;
@@ -8,4 +8,4 @@ choral.factory('cards', ['$http', function ($http) {
 	.error(function (err) {
 		return err;
 	})
-}]);
+});

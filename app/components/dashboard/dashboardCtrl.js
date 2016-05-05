@@ -13,4 +13,13 @@ choral.controller('DashboardCtrl', ['$scope', 'cards', 'auth', function ($scope,
 		// adds one
 		cards.upvotes += 1;
 	};
+
+  // $scope.refresh = function () {
+	// 	CardSvc.fetch()
+	// 	.then(function (todos) {
+	// 		$scope.todos = todos.data;
+	// 	});
+	// }
+	// $scope.refresh();
+
 }]);

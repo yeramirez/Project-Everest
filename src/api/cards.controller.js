@@ -16,6 +16,14 @@ router.get('/', function (req, res, next) {
   });
 });
 
+router.get('/:id', function (req, res, next) {
+	Card.find(req.params.id, function (err, card) {
+		if (err) return next(err);
+		res.sendStatus(201);
+		console.log('Found Successfully!');
+	});
+});
+
 router.post('/', function (req, res, next) {
   console.log("---------- The Body ----------");
   console.log(req.body);

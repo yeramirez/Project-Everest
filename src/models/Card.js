@@ -9,7 +9,7 @@ var CardSchema = new Schema ({
 	mood: String,
   following: {type: Boolean, default: false},
 	upvotes: { type: Number, default: 0 },
-	date: { type: Date, default: Date.now },
+	created: { type: Date, default: Date.now },
 	collab: { type: Boolean, default: false },
 	comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}]
 });

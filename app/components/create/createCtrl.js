@@ -1,14 +1,14 @@
 'use strict'
 
 console.log('PostCtrl controller has loaded');
-var user = JSON.parse(localStorage.profile);
-console.log(user.nickname);
 
 choral.controller('CreateCtrl', function ($scope, CardSvc, $mdDialog, auth) {
 	$scope.posts = [];
   $scope.profile = auth.profile;
 
-  $scope.collab = true;
+  $scope.checkboxModel = {
+    value1 : true
+  };
 
 	$scope.addCard = function () {
 		CardSvc.add($scope.newPost)
