@@ -1,11 +1,13 @@
 <toolbar></toolbar>
 <div layout-padding class="dashboard">
 	<md-card class="card col-xs-6 col-md-4" ng-repeat="card in cards">
-		<md-card-content>
-			<p class="md-title">
-				{{card.lyrics}}
-			</p>
-      <p class="md-subhead">@{{profile.nickname}}</p>
-		</md-card-content>
+    <a>
+  		<md-card-content>
+  			<p class="md-title">
+  				{{card.lyrics}}
+  			</p>
+        <p class="md-subhead">@{{profile.nickname}}</p>
+  		</md-card-content>
+    </a>
 	</md-card>
 </div>

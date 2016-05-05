@@ -2,7 +2,7 @@
 
 console.log('PostCtrl controller has loaded');
 
-choral.controller('CreateCtrl', function ($scope, CardSvc, $mdDialog, auth) {
+choral.controller('CreateCtrl', function ($scope, CardSvc, $mdDialog, auth, $state) {
 	$scope.posts = [];
   $scope.profile = auth.profile;
 
@@ -15,6 +15,7 @@ choral.controller('CreateCtrl', function ($scope, CardSvc, $mdDialog, auth) {
 		.then(function () {
 			$scope.posts.push($scope.newPost);
 			$scope.newPost = '';
+      $state.go('dashboard');
 		});
 	}
 

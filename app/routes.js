@@ -1,13 +1,4 @@
-choral.config(function (
-  $stateProvider,
-  $urlRouterProvider,
-  authProvider,
-  $httpProvider,
-  jwtInterceptorProvider,
-  $mdThemingProvider,
-  $mdIconProvider
-  ) {
-
+choral.config(function ($stateProvider, $urlRouterProvider, authProvider, $httpProvider, jwtInterceptorProvider, $mdThemingProvider, $mdIconProvider) {
   $mdIconProvider
     .iconSet("call", 'img/icons/sets/communication-icons.svg', 24)
     .iconSet("social", 'img/icons/sets/social-icons.svg', 24);
@@ -51,15 +42,6 @@ choral.config(function (
       url: '/home',
       templateUrl: 'components/home/home.tpl.html',
       controller: 'LoginCtrl'
-    })
-
-    .state('dashboard', {
-      url: '/dashboard',
-      templateUrl: 'components/dashboard/dashboard.tpl.html',
-      controller: 'DashboardCtrl',
-      data: {
-        requiresLogin: true
-      }
     })
 
     .state('create', {

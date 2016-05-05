@@ -5,7 +5,7 @@ console.log('service loaded');
 
 // The actual service: will make a call to the api
 choral.service('CardSvc', function ($http) {
-	this.fetch = function () {
+	this.getCards = function () {
 		return $http.get('/api/cards');
 	};
 

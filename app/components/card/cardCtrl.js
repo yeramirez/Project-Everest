@@ -1,6 +1,6 @@
 'use strict';
 choral.controller('CardCtrl', [
-		'$scope', 
+		'$scope',
 		'$stateParams',
 		'cards',
 		function ($scope, $stateParams, cards) {
