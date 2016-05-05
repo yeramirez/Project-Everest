@@ -80,9 +80,11 @@ choral.config(function (
       }
     })
 
-    .state('cardDetail', {
-      url: '/party/:partyID/:partyLocation'
-    });
+    .state('/cards', {
+			url: '/cards/{id}',
+			templateUrl: '/posts.html',
+			controller: 'CardCtrl'
+		});
 
   $urlRouterProvider.otherwise('dashboard');
 

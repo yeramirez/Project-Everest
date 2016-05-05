@@ -23,6 +23,7 @@
     "dotenv": "^2.0.0",
     "ejs": "^2.4.1",
     "express": "4.13.4",
+    "express-jwt": "^3.3.0",
     "express-session": "^1.13.0",
     "lodash": "^4.11.1",
     "mongoose": "4.4.5",
