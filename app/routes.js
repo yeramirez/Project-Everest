@@ -62,12 +62,6 @@ choral.config(function ($stateProvider, $urlRouterProvider, authProvider, $httpP
       }
     })
 
-    .state('/cards', {
-			url: '/cards/{id}',
-			templateUrl: '/posts.html',
-			controller: 'CardCtrl'
-		});
-
   $urlRouterProvider.otherwise('dashboard');
 
 });

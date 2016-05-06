@@ -73,6 +73,17 @@ a, a:hover, a:active {
   width: 85%;
   text-align: center; }
 
+.favorite {
+  position: absolute;
+  bottom: 0;
+  right: 0; }
+
+.fav-btn {
+  fill: #CBC9CF; }
+
+.fav-btn-selected {
+  fill: #F44336; }
+
 /* ------------ New Card ------------ */
 .addCard {
   height: 300px;

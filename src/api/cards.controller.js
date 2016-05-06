@@ -29,7 +29,8 @@ router.post('/', authCheck, function (req, res, next) {
 	var card = new Card({
 			lyrics: req.body.lyrics,
 			author: req.body.author,
-			mood: req.body.mood
+			mood: req.body.mood,
+      user_id: req.body.user_id
 		});
 
 	card.save(function(err, card) {
