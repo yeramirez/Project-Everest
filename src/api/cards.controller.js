@@ -25,11 +25,11 @@ router.get('/', function (req, res, next) {
 router.post('/', authCheck, function (req, res, next) {
   console.log("---------- The Body ----------");
   console.log(req.body);
+
 	var card = new Card({
 			lyrics: req.body.lyrics,
 			author: req.body.author,
-			mood: req.body.mood,
-      collab: req.body.collab
+			mood: req.body.mood
 		});
 
 	card.save(function(err, card) {

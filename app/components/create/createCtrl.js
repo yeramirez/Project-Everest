@@ -6,16 +6,14 @@ choral.controller('CreateCtrl', function ($scope, CardSvc, $mdDialog, auth, $sta
 	$scope.posts = [];
   $scope.profile = auth.profile.nickname;
 
-  $scope.checkboxModel = {
-    value1 : true
-  };
-
 	$scope.addCard = function () {
 		CardSvc.add($scope.newPost)
 		.then(function () {
 			$scope.posts.push($scope.newPost);
+      console.log('Can you hear it ', $scope.profile);
 			$scope.newPost = '';
       $state.go('dashboard');
+      console.log(posts);
 		});
 	}
 
