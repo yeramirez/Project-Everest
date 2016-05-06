@@ -4,7 +4,7 @@ console.log('PostCtrl controller has loaded');
 
 choral.controller('CreateCtrl', function ($scope, CardSvc, $mdDialog, auth, $state) {
 	$scope.posts = [];
-  $scope.profile = auth.profile;
+  $scope.profile = auth.profile.nickname;
 
   $scope.checkboxModel = {
     value1 : true
