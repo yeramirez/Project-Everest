@@ -6,14 +6,18 @@ choral.controller('CreateCtrl', function ($scope, CardSvc, $mdDialog, auth, $sta
 	$scope.posts = [];
   $scope.profile = auth.profile.nickname;
 
+  $scope.newCard = {
+    lyrics: '',
+    mood: '',
+    author: $scope.profile
+  }
+
 	$scope.addCard = function () {
-		CardSvc.add($scope.newPost)
+		CardSvc.add($scope.newCard)
 		.then(function () {
-			$scope.posts.push($scope.newPost);
-      console.log('Can you hear it ', $scope.profile);
+			$scope.posts.push($scope.newCard);
 			$scope.newPost = '';
       $state.go('dashboard');
-      console.log(posts);
 		});
 	}
 
