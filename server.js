@@ -26,11 +26,7 @@ app.use(bodyParser.json());
 
 //routes
 var cards = require('./src/api/cards.controller.js');
-var users = require('./src/api/user.controller.js');
 app.use('/api/cards', cards);
-app.use('/api/users', users);
-
-
 
 // listen on $PORT or 3000
 // this makes the app work on heroku
