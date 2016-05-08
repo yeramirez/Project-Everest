@@ -8,12 +8,17 @@
         <p class="md-subhead">@{{card.author}}</p>
   		</md-card-content>
       <md-card-actions class="favorite" layout="row" layout-align="end end">
-        <md-button class="md-icon-button" aria-label="Favorite">
+        <md-button class="md-icon-button" aria-label="Comment">
           <ng-md-icon icon="chat" style="fill: #CBC9CF" size="24"></ng-md-icon>
         </md-button>
-        <md-button id="fav" class="md-icon-button fav-btn" aria-label="Favorite">
+        <span>{{card.comments}}</span>
+        <md-button ng-click="addOne(card)" id="fav" class="md-icon-button fav-btn" aria-label="Favorite">
           <ng-md-icon icon="favorite" size="24"></ng-md-icon>
         </md-button>
+        <span>{{card.upvotes}}</span>
       </md-card-actions>
+      <span>
+				<a href="#/cards/{{$index}}">Comments</a>
+			</span>
 	</md-card>
 </div>

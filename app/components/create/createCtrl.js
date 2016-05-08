@@ -13,7 +13,13 @@ choral.controller('CreateCtrl', function ($scope, CardSvc, $mdDialog, auth, $sta
     lyrics: '',
     mood: '',
     author: $scope.nickname,
-    user_id: $scope.user_id
+    user_id: $scope.user_id,
+    comments: [
+			// fake comments
+			{author: 'Pam', body: 'Nice!', upvotes:0},
+			{author: 'Michael', body: 'TWSS', upvotes:0},
+			{author: 'Creed', body: 'Meh', upvotes:0},
+		]
   }
 
   // Add a card using the add method

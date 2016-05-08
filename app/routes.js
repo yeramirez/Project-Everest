@@ -44,6 +44,12 @@ choral.config(function ($stateProvider, $urlRouterProvider, authProvider, $httpP
       controller: 'LoginCtrl'
     })
 
+    .state('/cards', {
+			url: '/cards/{id}',
+			templateUrl: 'components/card/card.tpl.html',
+			controller: 'CardCtrl'
+		})
+
     .state('create', {
       url: '/create',
       templateUrl: 'components/create/create.tpl.html',
