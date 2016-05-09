@@ -79,7 +79,7 @@ router.param('card', function(req, res, next, id) {
 /////////
 
 router.param('comment', function(req, res, next, id) {
-  var query = Comment.findById(id);
+  var query = Comments.findById(id);
 
   query.exec(function (err, comment){
     if (err) { return next(err); }
@@ -96,22 +96,22 @@ router.get('/:card', function(req, res, next) {
   });
 });
 
-router.put('/:card/upvote', function(req, res, next) {
-  req.card.upvote(function(err, card){
+router.put('/:card/likes', function(req, res, next) {
+  req.card.like(function(err, card){
     if (err) { return next(err); }
     res.json(card);
   });
 });
 
-router.put('/:card/downvote', function(req, res, next) {
-  req.card.downvote(function(err, card){
+router.put('/:card/dislike', function(req, res, next) {
+  req.card.dislike(function(err, card){
     if (err) { return next(err); }
     res.json(card);
   });
 });
 
 router.post('/:card/comments', function(req, res, next) {
-  var comment = new Comment(req.body);
+  var comment = new Comments(req.body);
   comment.card = req.card;
 
   comment.save(function(err, comment){
@@ -126,16 +126,16 @@ router.post('/:card/comments', function(req, res, next) {
   });
 });
 
-router.put('/:card/comments/:comment/upvote', function(req, res, next) {
-  req.comment.upvote(function(err, comment){
+router.put('/:card/comments/:comment/like', function(req, res, next) {
+  req.comment.like(function(err, comment){
     if (err) { return next(err); }
 
     res.json(comment);
   });
 });
 
-router.put('/:card/comments/:comment/downvote', function(req, res, next) {
-  req.comment.downvote(function(err, comment){
+router.put('/:card/comments/:comment/dislike', function(req, res, next) {
+  req.comment.dislike(function(err, comment){
     if (err) { return next(err); }
 
     res.json(comment);

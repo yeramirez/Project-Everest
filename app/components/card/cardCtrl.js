@@ -24,7 +24,7 @@
 // 				$scope.card.comments.push({
 // 					body: $scope.body,
 // 					author: 'user',
-// 					upvotes: 0
+// 					likes: 0
 // 				});
 //
 // 				// reset after comment has been created
@@ -43,7 +43,7 @@ choral.controller('CardCtrl', [
           if ($scope.body === '') {
               return;
           }
-          CardSvc.addComment(post._id, {
+          CardSvc.addComment(card._id, {
               body: $scope.body,
               author: 'user'
           }).success(function (comment) {
@@ -52,12 +52,12 @@ choral.controller('CardCtrl', [
           $scope.body = '';
       };
 
-      $scope.upvote = function (comment) {
-          CardSvc.upvoteComment(card, comment);
+      $scope.like = function (comment) {
+          CardSvc.likeComment(card, comment);
       };
 
-      $scope.downvote = function (comment) {
-          CardSvc.downvoteComment(card, comment);
+      $scope.dislike = function (comment) {
+          CardSvc.dislikeComment(card, comment);
       };
 
   }]);

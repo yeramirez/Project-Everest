@@ -15,23 +15,23 @@ choral.service('CardSvc', ['$http', function ($http) {
   };
   // uses router.post in index.js to card a new card model to mongoDB
   // when $http gets success, it adds this card to the card object in local factory
-  x.create = function (card) {
+  x.add = function (card) {
     return $http.post('/api/cards', card)
       .success(function (data) {
         x.cards.push(data);
     });
   };
 
-  x.upvote = function (card) {
-    //use express route for this card's id to add upvote to mongo model
-    return $http.put('/api/cards/' + card._id + '/upvote')
+  x.like = function (card) {
+    //use express route for this card's id to add like to mongo model
+    return $http.put('/api/cards/' + card._id + '/likes')
       .success(function (data) {
         card.votes += 1;
       });
   };
 
-  x.downvote = function (card) {
-    return $http.put('/api/cards/' + card._id + '/downvote')
+  x.dislike = function (card) {
+    return $http.put('/api/cards/' + card._id + '/dislikes')
       .success(function(data) {
         card.votes -= 1;
       });
@@ -49,15 +49,15 @@ choral.service('CardSvc', ['$http', function ($http) {
       return $http.post('/api/cards/' + id + '/comments', comment);
   };
 
-  x.upvoteComment = function (card, comment) {
-    return $http.put('/api/cards/' + card._id + '/comments/' + comment._id + '/upvote')
+  x.likeComment = function (card, comment) {
+    return $http.put('/api/cards/' + card._id + '/comments/' + comment._id + '/likes')
       .success(function (data) {
           comment.votes += 1;
       });
   };
 
-  x.downvoteComment = function (card, comment) {
-    return $http.put('/api/cards/' + card._id + '/comments/' + comment._id + '/downvote')
+  x.dislikeComment = function (card, comment) {
+    return $http.put('/api/cards/' + card._id + '/comments/' + comment._id + '/dislikes')
       .success(function (data) {
         comment.votes -= 1;
       });

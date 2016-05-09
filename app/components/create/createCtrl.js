@@ -2,7 +2,7 @@
 
 choral.controller('CreateCtrl', function ($scope, CardSvc, $mdDialog, auth, $state) {
   // Empty array setup
-	$scope.posts = [];
+	$scope.cards = [];
 
   // Set profile information to variables
   $scope.nickname = auth.profile.nickname;
@@ -14,12 +14,6 @@ choral.controller('CreateCtrl', function ($scope, CardSvc, $mdDialog, auth, $sta
     mood: '',
     author: $scope.nickname,
     user_id: $scope.user_id,
-    comments: [
-			// fake comments
-			{author: 'Pam', body: 'Nice!', upvotes:0},
-			{author: 'Michael', body: 'TWSS', upvotes:0},
-			{author: 'Creed', body: 'Meh', upvotes:0},
-		]
   }
 
   // Add a card using the add method
@@ -28,7 +22,7 @@ choral.controller('CreateCtrl', function ($scope, CardSvc, $mdDialog, auth, $sta
 		CardSvc.add($scope.newCard)
 		.then(function () {
       // Push the card into the array we made earlier too
-			$scope.posts.push($scope.newCard);
+			$scope.cards.push($scope.newCard);
       // Reset the value
 			$scope.newCard = '';
       // Take me to the dashboard!
@@ -37,9 +31,9 @@ choral.controller('CreateCtrl', function ($scope, CardSvc, $mdDialog, auth, $sta
 	}
 
 	$scope.removePost = function () {
-		CardSvc.delete($scope.post)
+		CardSvc.delete($scope.card)
 		.then(function () {
-			$scope.posts.remove(post);
+			$scope.cards.remove(card);
 		})
 	}
 

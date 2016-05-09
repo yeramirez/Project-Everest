@@ -9,18 +9,18 @@ var CardSchema = new Schema ({
 	author: String,
 	mood: String,
   user_id: String,
-	upvotes: { type: Number, default: 0 },
+	likes: { type: Number, default: 0 },
 	created: { type: Date, default: Date.now },
 	comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}]
 });
 
-CardSchema.methods.upvote = function(cb) {
-  this.votes += 1;
+CardSchema.methods.like = function(cb) {
+  this.likes += 1;
   this.save(cb);
 };
 
-CardSchema.methods.downvote = function(cb) {
-  this.votes -= 1;
+CardSchema.methods.dislike = function(cb) {
+  this.likes -= 1;
   this.save(cb);
 }
 

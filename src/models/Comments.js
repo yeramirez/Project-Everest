@@ -3,17 +3,17 @@ var mongoose = require('mongoose');
 var CommentSchema = new mongoose.Schema({
   body: String,
   author: String,
-  votes: {type: Number, default: 0},
+  likes: {type: Number, default: 0},
   card: { type: mongoose.Schema.Types.ObjectId, ref: 'Card' }
 });
 
-CommentSchema.methods.upvote = function(cb) {
-  this.votes += 1;
+CommentSchema.methods.like = function(cb) {
+  this.likes += 1;
   this.save(cb);
 };
 
-CommentSchema.methods.downvote = function(cb) {
-  this.votes -= 1;
+CommentSchema.methods.dislike = function(cb) {
+  this.likes -= 1;
   this.save(cb);
 }
 

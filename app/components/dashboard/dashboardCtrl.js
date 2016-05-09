@@ -19,11 +19,14 @@ angular.module('choral.postList', [
   // Get user profile information calling Auth0 api
   $scope.profile = auth.profile;
 
-  // Upvote a post
-	$scope.addOne = function(cards) {
-		// adds one
-		cards.upvotes += 1;
-	};
+  $scope.like = function (card) {
+    card.likes += 1;
+    CardSvc.like(card);
+  };
+
+  $scope.dislike = function (card) {
+    CardSvc.dislike(card);
+  };
 
   // Getting the posts from the database
   (function () {
