@@ -3,16 +3,17 @@
 	<div>
 		<md-input-container class="md-block">
 			<label>Lyrics - Character Limit 150</label>
-			<textarea ng-model="newPost.lyrics" md-maxlength="150" rows="7" md-select-on-focus></textarea>
+			<textarea ng-model="newCard.lyrics" md-maxlength="150" rows="7" md-select-on-focus></textarea>
 		</md-input-container>
 	</div>
-	<md-input-container class="mood">
-    <label>Select Mood</label>
-    <md-select ng-model="newPost.mood">
-      <md-option ng-repeat="mood in moods" value="{{mood}}">{{mood}}</md-option>
-    </md-select>
-  </md-input-container>
-  <md-switch ng-model="newPost.collab" value="{{collab}}">Allow Collaboration {{collab ? "Yes" : "No"}}</md-switch>
+  <div>
+    <md-input-container class="mood">
+      <label>Select Mood</label>
+      <md-select ng-model="newCard.mood">
+        <md-option ng-repeat="mood in moods" value="{{mood}}">{{mood}}</md-option>
+      </md-select>
+    </md-input-container>
+  </div>
   <md-input-container>
     <md-button class="md-raised md-accent" type="submit">Post</md-button>
   </md-input-container>

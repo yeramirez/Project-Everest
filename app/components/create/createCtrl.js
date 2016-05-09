@@ -1,30 +1,43 @@
 'use strict'
 
-console.log('PostCtrl controller has loaded');
-var user = JSON.parse(localStorage.profile);
-console.log(user.nickname);
+choral.controller('CreateCtrl', function ($scope, CardSvc, $mdDialog, auth, $state) {
+  // Empty array setup
+	$scope.cards = [];
 
-choral.controller('CreateCtrl', function ($scope, CardSvc, $mdDialog, auth) {
-	$scope.posts = [];
-  $scope.profile = auth.profile;
+  // Set profile information to variables
+  $scope.nickname = auth.profile.nickname;
+  $scope.user_id = auth.profile.user_id;
 
-  $scope.collab = true;
+  // Set up the creation of a new card
+  $scope.newCard = {
+    lyrics: '',
+    mood: '',
+    author: $scope.nickname,
+    user_id: $scope.user_id,
+  }
 
+  // Add a card using the add method
 	$scope.addCard = function () {
-		CardSvc.add($scope.newPost)
+    // Pass the card we set up earlier
+		CardSvc.add($scope.newCard)
 		.then(function () {
-			$scope.posts.push($scope.newPost);
-			$scope.newPost = '';
+      // Push the card into the array we made earlier too
+			$scope.cards.push($scope.newCard);
+      // Reset the value
+			$scope.newCard = '';
+      // Take me to the dashboard!
+      $state.go('dashboard');
 		});
 	}
 
 	$scope.removePost = function () {
-		PostSvc.delete($scope.post)
+		CardSvc.delete($scope.card)
 		.then(function () {
-			$scope.posts.remove(post);
+			$scope.cards.remove(card);
 		})
 	}
 
+  // Set the mood...
 	$scope.moods = [
 		"Happy",
 		"Sad",

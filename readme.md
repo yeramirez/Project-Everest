@@ -22,13 +22,13 @@ Below are defined user stories that will be followed during the building of this
 | ----          | ------------------------------------------------------				| ---------- |
 | D200          | User should be able to log out      								   	| Complete |
 | D201          | User should be able to view feed										| Complete |
-| D202          | User should be able to 'like' a post								   	| Complete |
+| D202          | User should be able to 'like' a card								   	| Complete |
 | D203          | User should be able to 'follow' another User							| Incomplete |
-| D204          | User should be able to 'collab' to another user's post			   	| Incomplete |
-| D205          | User should be able to click on a username on a post and go to their profile				| Incomplete |
-| D206          | User should be able to view how many likes a post has				  	| Incomplete |
+| D204          | User should be able to 'collab' to another user's card			   	| Incomplete |
+| D205          | User should be able to click on a username on a card and go to their profile				| Incomplete |
+| D206          | User should be able to view how many likes a card has				  	| Complete |
 | ----          | ------------------------------------------------------				| ---------- |
-| D300          | User should be able to see posted posts     						   	| Incomplete |
+| D300          | User should be able to see carded cards     						   	| Complete |
 | ----          | ------------------------------------------------------				| ---------- |
 | D400          | User should be able to change their username							| Incomplete |
 | D401          | User should be able to see their profile picture					   	| Complete |
@@ -36,5 +36,4 @@ Below are defined user stories that will be followed during the building of this
 | ----          | ------------------------------------------------------				| ---------- |
 | D500          | User should be able to add their lyrics								| Complete   |
 | D501          | User should be able to specify their mood							   	| Complete   |
-| D502          | User should be able to choose whether to allow collaboration or not	| Complete |
-| D503          | User should be able to post the post								  	| Complete   |
+| D502          | User should be able to post the card								  	| Complete   |

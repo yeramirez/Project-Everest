@@ -1,11 +1,23 @@
 <toolbar></toolbar>
 <div layout-padding class="dashboard">
-	<md-card class="card col-xs-6 col-md-4" ng-repeat="card in cards">
-		<md-card-content>
-			<p class="md-title">
-				{{card.lyrics}}
-			</p>
-      <p class="md-subhead">@{{profile.nickname}}</p>
-		</md-card-content>
+	<md-card class="card col-xs-6 col-md-4" ng-repeat="card in cards | orderBy: '-likes'">
+  		<md-card-content>
+  			<p class="md-title">
+  				{{card.lyrics}}
+  			</p>
+        <p class="md-subhead">@{{card.author}}</p>
+  		</md-card-content>
+      <md-card-actions class="favorite" layout="row" layout-align="end end">
+        <md-button class="md-icon-button" aria-label="Comment">
+          <a href="#/cards/{{card._id}}">
+            <ng-md-icon icon="chat" style="fill: #CBC9CF" size="24"></ng-md-icon>
+          </a>
+        </md-button>
+        {{card.comments.length}}
+        <md-button ng-click="like(card)" id="fav" class="md-icon-button fav-btn" aria-label="Favorite">
+          <ng-md-icon icon="favorite" size="24"></ng-md-icon>
+        </md-button>
+        <span>{{card.likes}}</span>
+      </md-card-actions>
 	</md-card>
 </div>

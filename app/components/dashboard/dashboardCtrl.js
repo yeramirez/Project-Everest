@@ -1,16 +1,38 @@
 'use strict';
-console.log('DashboardCtrl loaded');
 
-choral.controller('DashboardCtrl', ['$scope', 'cards', 'auth', function ($scope, cards, auth, $mdOpenMenu) {
+angular.module('choral.postList', [
+  'ui.router'
+])
+.config(function ($stateProvider) {
+  $stateProvider
+    .state('dashboard', {
+      url: '/dashboard',
+      controller: 'DashboardCtrl',
+      templateUrl: 'components/dashboard/dashboard.tpl.html',
+      data: {
+        requiresLogin: true
+      }
+    })
+})
+.controller('DashboardCtrl', ['$scope', 'CardSvc', 'auth', function ($scope, CardSvc, auth, $mdOpenMenu) {
 
+  // Get user profile information calling Auth0 api
   $scope.profile = auth.profile;
 
-	cards.success(function (data) {
-		$scope.cards = data;
-	});
+  $scope.like = function (card) {
+    card.likes += 1;
+    CardSvc.like(card);
+  };
 
-	$scope.addOne = function(cards) {
-		// adds one
-		cards.upvotes += 1;
-	};
+  $scope.dislike = function (card) {
+    CardSvc.dislike(card);
+  };
+
+  // Getting the posts from the database
+  (function () {
+		CardSvc.getAll()
+		.then(function (cards) {
+			$scope.cards = cards.data;
+		});
+	})();
 }]);
