@@ -27,7 +27,7 @@ angular.module('choral.postList', [
 
   // Getting the posts from the database
   (function () {
-		CardSvc.get()
+		CardSvc.getAll()
 		.then(function (cards) {
 			$scope.cards = cards.data;
 		});

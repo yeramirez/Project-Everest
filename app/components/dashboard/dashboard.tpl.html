@@ -1,6 +1,6 @@
 <toolbar></toolbar>
 <div layout-padding class="dashboard">
-	<md-card class="card col-xs-6 col-md-4" ng-repeat="card in cards">
+	<md-card class="card col-xs-6 col-md-4" ng-repeat="card in cards | orderBy: '-upvotes'">
   		<md-card-content>
   			<p class="md-title">
   				{{card.lyrics}}
@@ -18,7 +18,7 @@
         <span>{{card.upvotes}}</span>
       </md-card-actions>
       <span>
-				<a href="#/cards/{{$index}}">Comments</a>
+        <a href="#/cards/{{card._id}}">Comments</a>
 			</span>
 	</md-card>
 </div>

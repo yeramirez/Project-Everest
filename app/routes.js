@@ -44,11 +44,16 @@ choral.config(function ($stateProvider, $urlRouterProvider, authProvider, $httpP
       controller: 'LoginCtrl'
     })
 
-    .state('/cards', {
-			url: '/cards/{id}',
-			templateUrl: 'components/card/card.tpl.html',
-			controller: 'CardCtrl'
-		})
+    .state('cards', {
+      url: '/cards/:id',
+      templateUrl: 'components/card/card.tpl.html',
+      controller: 'CardCtrl',
+      resolve: {
+        card: ['$stateParams', 'CardSvc', function ($stateParams, CardSvc) {
+          return CardSvc.get($stateParams.id);
+        }]
+      }
+    })
 
     .state('create', {
       url: '/create',

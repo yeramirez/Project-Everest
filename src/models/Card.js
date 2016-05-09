@@ -14,6 +14,16 @@ var CardSchema = new Schema ({
 	comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}]
 });
 
+CardSchema.methods.upvote = function(cb) {
+  this.votes += 1;
+  this.save(cb);
+};
+
+CardSchema.methods.downvote = function(cb) {
+  this.votes -= 1;
+  this.save(cb);
+}
+
 // Create a model out of the schema
 var Card = mongoose.model('Card', CardSchema);
 
