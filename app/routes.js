@@ -22,7 +22,7 @@ choral.config(['$stateProvider', '$urlRouterProvider', 'authProvider', '$httpPro
   });
 
   // What to do in the case of a failure
-  authProvider.on('loginFailure', function() {
+  authProvider.on('loginFailure', function($location) {
     console.log("Login Failed.");
     alert("I'm sorry. We could not identify you. Please try again.");
     console.log($location.path());
