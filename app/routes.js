@@ -1,4 +1,4 @@
-choral.config(function ($stateProvider, $urlRouterProvider, authProvider, $httpProvider, jwtInterceptorProvider, $mdThemingProvider, $mdIconProvider) {
+choral.config(function ($stateProvider, $urlRouterProvider, authProvider, $httpProvider, jwtInterceptorProvider, $mdThemingProvider, $mdIconProvider, $location) {
   $mdIconProvider
     .iconSet("call", 'img/icons/sets/communication-icons.svg', 24)
     .iconSet("social", 'img/icons/sets/social-icons.svg', 24);
@@ -17,6 +17,7 @@ choral.config(function ($stateProvider, $urlRouterProvider, authProvider, $httpP
       store.set('profile', profile);
       store.set('token', idToken);
     });
+    console.log($location.path());
     $location.path('/dashboard');
   });
 
@@ -24,6 +25,7 @@ choral.config(function ($stateProvider, $urlRouterProvider, authProvider, $httpP
   authProvider.on('loginFailure', function() {
     console.log("Login Failed.");
     alert("I'm sorry. We could not identify you. Please try again.");
+    console.log($location.path());
     $location.path('/home');
   });
 
