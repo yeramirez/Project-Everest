@@ -39,9 +39,11 @@ choral.controller('CreateCtrl', function ($scope, CardSvc, $mdDialog, auth, $sta
 
   // Set the mood...
 	$scope.moods = [
-		"Happy",
-		"Sad",
-		"Angry",
-		"Hopeful"
+		"Melancholy",
+		"Peaceful",
+		"Somber",
+		"Intimate",
+    "Sentimental",
+    "Euphoric"
 	]
 })

@@ -1,6 +1,8 @@
 /* ------------ Variable Declarations ------------ */
 
-$font-stack: 'Karla', sans-serif
+$font-stack-primary: 'Karla', sans-serif
+$font-stack-secondary: 'Playfair Display', 'Arial', sans-serif
+$font-stack-tertiary: 'Georgia', serif
 $primary-color: #4994FC
 $base-color: #212121
 $secondary-color: #F2F2F2
@@ -10,7 +12,7 @@ $gradient-one: to bottom,  #212121 0%,#31302c 100%
 
 
 body
-  font: 100% $font-stack
+  font: 100% $font-stack-primary
   color: $base-color
 
 /* ------------ Navigation ------------ */
@@ -60,6 +62,7 @@ a, a:hover, a:active
   background: #fff
   border-radius: 2px
   display: block
+  text-align: center
   float: left
   height: 300px
   margin: 1rem
@@ -75,33 +78,72 @@ a, a:hover, a:active
   -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
   -moz-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
 
-.card > p
-  font-family: 'Georgia', sans-serif
+md-card-content > p
+  font-family: $font-stack-tertiary
   padding: 15px 10px
   font-size: 18px
   color: #4F514F
 
-.card > h4
+.md-subhead
+  letter-spacing: 1.5px
+
+md-card-content > span
+  font-family: $font-stack-primary
+
+h6
+  text-transform: uppercase
+  font-size: .7em
+  color: #9E9E9E
+
+.t-btn
+  fill: #474a4f
+
+.c-btn > .collab-btn, .c-btn > .collab-btn:hover
+  min-width: 50px
+  min-height: 28px
+  line-height: normal
+  font-weight: bold
+  height: 20px
+  font-size: .8em
+  color: $secondary-color
+  background-color: #32DE7F
+
+.c-btn
   position: absolute
-  bottom: 0
-  width: 85%
-  text-align: center
+  bottom: 3%
+  right: auto
 
 .favorite
   position: absolute
   bottom: 3%
-  right: 0
+  right: 15px
+  height: 40px
 
 .md-button.md-icon-button
   height: 52px
   width: 40px
 
-.fav-btn
+md-card md-card-actions:not(.layout-column) .md-button.md-icon-button:last-of-type
+  margin-right: 0px
+
+.card-btn
   fill: #CBC9CF
 
-.fav-btn-selected
-  fill: #F44336
+// .fav-btn-selected
+//   fill: #F44336
 
+.q_svg
+  height: 27px
+
+.com
+  margin-left: 10px
+  padding-top: 4px
+  color: #CBC9CF
+
+.y-lks
+  height: 20px
+  margin-top: 16px
+  color: #CBC9CF
 
 
 /* ------------ New Card ------------ */
@@ -124,7 +166,7 @@ textarea
   overflow: none
 
 #input_1
-  height: 80px
+  min-height: 80px
 
 .mood
   width: 136px
@@ -158,8 +200,17 @@ footer, footer > nav > a
 
 .index-icon
   height: 150px
+/* ---------- Toolbar ---------- */
+md-menu-item
+  margin-bottom: 10px
 
-/* ----------- Profile ----------- */
+.md-button
+  text-transform: none
+
+md-menu-bar.md-default-theme md-menu.md-open > button, md-menu-bar md-menu.md-open > button, md-menu-bar.md-default-theme md-menu > button:focus, md-menu-bar md-menu > button:focus
+  background: transparent
+
+/* ---------- Profile ---------- */
 .profile
   text-align: center
   max-width: 1040px
