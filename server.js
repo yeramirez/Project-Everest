@@ -1,6 +1,9 @@
 'use strict';
 
-if (!process.env.PORT) require('dotenv').config();
+if (!process.env.PORT) {
+  require('dotenv').config();
+};
+// dotenv.load();
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
@@ -33,5 +36,5 @@ app.use('/api/cards', cards);
 var port = process.env.PORT || 5000;
 
 http.createServer(app).listen(port, function (err) {
-  console.log('Coming to you from Orlando from port ' + port);
+  console.log('Yello! Coming at you with ' + port + ' hugs!');
 });

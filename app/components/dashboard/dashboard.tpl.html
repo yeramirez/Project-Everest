@@ -1,25 +1,27 @@
 <toolbar></toolbar>
 <div layout-padding class="dashboard">
 	<md-card class="card col-xs-6 col-md-4" ng-repeat="card in cards | orderBy: '-likes'">
+		<md-card-content>
       <a href="#/cards/{{card._id}}">
-    		<md-card-content>
-          <img class="q_svg" src="components/img/quote.svg" alt="Quotations" />
-          <h6 class="md-subhead">{{card.mood}}</h6>
-    			<p class="md-title">
-    				{{card.lyrics}}
-    			</p>
-          <span class="md-subhead">@{{card.author}}</span>
-    		</md-card-content>
-        <md-card-actions class="c-btn" layout="row">
-          <md-button class="md-raised collab-btn">Collab</md-button>
-          <span class="com">{{card.comments.length}}</span>
-        </md-card-actions>
-        <md-card-actions class="favorite" layout="row">
-          <md-button ng-click="like(card)" class="md-icon-button" aria-label="Favorite">
-            <ng-md-icon icon="favorite" class="card-btn" size="24"></ng-md-icon>
-          </md-button>
-          <span class="y-lks">{{card.likes}}</span>
-        </md-card-actions>
+        <img class="q_svg" src="components/img/quote.svg" alt="Quotations" />
+        <h6 class="md-subhead">{{card.mood}}</h6>
+			  <p class="md-title">
+				  {{card.lyrics}}
+			  </p>
+        <span class="md-subhead">@{{card.author}}</span>
       </a>
+		</md-card-content>
+    <a href="#/cards/{{card._id}}">
+      <md-card-actions class="c-btn" layout="row">
+        <md-button class="md-raised collab-btn">Collab</md-button>
+        <span class="com">{{card.comments.length}}</span>
+      </md-card-actions>
+    </a>
+    <md-card-actions class="favorite" layout="row">
+      <md-button ng-click="like(card)" class="md-icon-button" aria-label="Favorite">
+        <ng-md-icon icon="favorite" class="card-btn" size="24"></ng-md-icon>
+      </md-button>
+      <span class="y-lks">{{card.likes}}</span>
+    </md-card-actions>
 	</md-card>
 </div>
