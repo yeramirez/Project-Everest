@@ -12,52 +12,49 @@
       New Post
     </md-button>
     <div layout="row">
-      <div>
-        <md-menu-bar>
-          <md-menu>
-            <button class="bar-link" ng-click="$mdOpenMenu()">
-              Options
-            </button>
-            <md-menu-content>
-              <md-menu-item>
+      <md-menu-bar>
+        <md-menu>
+          <button class="bar-link" ng-click="$mdOpenMenu()">
+            Options
+          </button>
+          <md-menu-content>
+            <md-menu-item>
+              <md-button
+                aria-label="New Post"
+                ui-sref="create"
+                ng-if="toolbar.auth.isAuthenticated"><ng-md-icon icon="create" class="t-btn" size="32"></ng-md-icon>
+                &nbsp;&nbsp;New Post
+              </md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button
+                aria-label="Dashboard"
+                ui-sref="dashboard"
+                ng-if="toolbar.auth.isAuthenticated"><ng-md-icon icon="dashboard" class="t-btn" size="32"></ng-md-icon>
+                &nbsp;&nbsp;Dashboard
+              </md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button
+                aria-label="Profile"
+                ui-sref="profile"
+                ng-if="toolbar.auth.isAuthenticated"><ng-md-icon icon="face"  size="32" class="t-btn"></ng-md-icon>
+                &nbsp;&nbsp;Profile
+              </md-button>
+            </md-menu-item>
+            <md-menu-item>
                 <md-button
-                  aria-label="New Post"
-                  ui-sref="create"
-                  ng-if="toolbar.auth.isAuthenticated"><ng-md-icon icon="create" class="t-btn" size="32"></ng-md-icon>
-                  &nbsp;&nbsp;New Post
+                  aria-label="Logout"
+                  type="submit"
+                  class="md-warn"
+                  ng-click="toolbar.logout()"
+                  ng-if="toolbar.auth.isAuthenticated"><ng-md-icon icon="logout" size="32" class="t-btn"></ng-md-icon>
+                  &nbsp;&nbsp;Log Out
                 </md-button>
-              </md-menu-item>
-              <md-menu-item>
-                <md-button
-                  aria-label="Dashboard"
-                  ui-sref="dashboard"
-                  ng-if="toolbar.auth.isAuthenticated"><ng-md-icon icon="dashboard" class="t-btn" size="32"></ng-md-icon>
-                  &nbsp;&nbsp;Dashboard
-                </md-button>
-              </md-menu-item>
-              <md-menu-item>
-                <md-button
-                  aria-label="Profile"
-                  ui-sref="profile"
-                  ng-if="toolbar.auth.isAuthenticated"><ng-md-icon icon="face"  size="32" class="t-btn"></ng-md-icon>
-                  &nbsp;&nbsp;Profile
-                </md-button>
-              </md-menu-item>
-              <md-menu-item>
-                  <md-button
-                    aria-label="Logout"
-                    type="submit"
-                    class="md-warn"
-                    ng-click="toolbar.logout()"
-                    ng-if="toolbar.auth.isAuthenticated"><ng-md-icon icon="logout" size="32" class="t-btn"></ng-md-icon>
-                    &nbsp;&nbsp;Log Out
-                  </md-button>
-
-              </md-menu-item>
-            </md-menu-content>
-          </md-menu>
-        </md-menu-bar>
-      </div>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+      </md-menu-bar>
     </div>
   </div>
 </md-toolbar>

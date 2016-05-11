@@ -19,7 +19,7 @@ angular.module('choral.postList', [
   $scope.profile = auth.profile;
 
   $scope.like = function (card) {
-    card.likes += 1;
+    // card.likes += 1;
     CardSvc.like(card);
   };
 
@@ -34,14 +34,14 @@ angular.module('choral.postList', [
 			$scope.cards = cards.data;
 
 
-      for (var i = 0; i < $scope.cards.length; i++) {
-        console.log(i);
-        if ($scope.cards[i].mood == "Hopeful") {
-          
-          $('#quote_svg').removeClass('st0');
-          $('#quote_svg').addClass('st0-h');
-        }
-      }
+      // for (var i = 0; i < $scope.cards.length; i++) {
+      //   console.log(i);
+      //   if ($scope.cards[i].mood == "Hopeful") {
+      // 
+      //     $('#quote_svg').removeClass('st0');
+      //     $('#quote_svg').addClass('st0-h');
+      //   }
+      // }
 		});
 	})();
 }]);
