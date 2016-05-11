@@ -23,36 +23,36 @@
                 <md-button
                   aria-label="New Post"
                   ui-sref="create"
-                  ng-if="toolbar.auth.isAuthenticated">
-                  New Post
+                  ng-if="toolbar.auth.isAuthenticated"><ng-md-icon icon="create" class="t-btn" size="32"></ng-md-icon>
+                  &nbsp;&nbsp;New Post
                 </md-button>
               </md-menu-item>
               <md-menu-item>
                 <md-button
                   aria-label="Dashboard"
                   ui-sref="dashboard"
-                  ng-if="toolbar.auth.isAuthenticated">
-                  Dashboard
+                  ng-if="toolbar.auth.isAuthenticated"><ng-md-icon icon="dashboard" class="t-btn" size="32"></ng-md-icon>
+                  &nbsp;&nbsp;Dashboard
                 </md-button>
               </md-menu-item>
-              <md-menu-divider></md-menu-divider>
               <md-menu-item>
                 <md-button
                   aria-label="Profile"
                   ui-sref="profile"
-                  ng-if="toolbar.auth.isAuthenticated">
-                  Profile
+                  ng-if="toolbar.auth.isAuthenticated"><ng-md-icon icon="face"  size="32" class="t-btn"></ng-md-icon>
+                  &nbsp;&nbsp;Profile
                 </md-button>
               </md-menu-item>
               <md-menu-item>
-                <md-button
-                  aria-label="Logout"
-                  type="submit"
-                  class="md-warn"
-                  ng-click="toolbar.logout()"
-                  ng-if="toolbar.auth.isAuthenticated">
-                  Log Out
-                </md-button>
+                  <md-button
+                    aria-label="Logout"
+                    type="submit"
+                    class="md-warn"
+                    ng-click="toolbar.logout()"
+                    ng-if="toolbar.auth.isAuthenticated"><ng-md-icon icon="logout" size="32" class="t-btn"></ng-md-icon>
+                    &nbsp;&nbsp;Log Out
+                  </md-button>
+
               </md-menu-item>
             </md-menu-content>
           </md-menu>

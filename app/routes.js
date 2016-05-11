@@ -27,7 +27,14 @@ choral.config(function ($stateProvider, $urlRouterProvider, authProvider, $httpP
     $location.path('/home');
   });
 
-  $mdThemingProvider.theme('default').primaryPalette('blue').accentPalette('pink');
+  $mdThemingProvider
+    .theme('default')
+    .primaryPalette('blue', {
+      'default': 'A400'
+    })
+    .accentPalette('pink', {
+      'default': '400'
+    });
 
   // Configuring the jwtInterceptor to always send the JWT
   jwtInterceptorProvider.tokenGetter = ['store', function(store) {
