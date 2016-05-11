@@ -62,8 +62,8 @@ a, a:hover, a:active {
   -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   -moz-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
 
-md-card-content > p {
-  font-family: "Georgia", serif;
+md-card-content > a > p {
+  font-family: "Droid Serif", serif;
   padding: 15px 10px;
   font-size: 18px;
   color: #4F514F; }
@@ -82,7 +82,7 @@ h6 {
 .t-btn {
   fill: #474a4f; }
 
-.c-btn > .collab-btn, .c-btn > .collab-btn:hover {
+.c-btn > .collab-btn, .c-btn > .collab-btn:hover, .c-btn > .md-raised:not([disabled]):hover {
   min-width: 50px;
   min-height: 28px;
   line-height: normal;
@@ -151,7 +151,7 @@ textarea {
   width: 136px; }
 
 .dashboard {
-  max-width: 1040px;
+  max-width: 1012px;
   margin: 0 auto; }
 
 /* ------------ Body ------------ */
@@ -177,6 +177,24 @@ footer, footer > nav > a {
 .index-icon {
   height: 150px; }
 
+.share, .like {
+  float: right;
+  padding-left: 20px; }
+
+.collab, .follow {
+  float: left;
+  padding-right: 20px; }
+
+.land-rows {
+  max-width: 1020px;
+  height: 200px;
+  padding-left: 7%;
+  padding-right: 7%;
+  margin: 20px auto; }
+
+.land-rows > article {
+  padding-top: 0.5px; }
+
 /* ---------- Toolbar ---------- */
 md-menu-item {
   margin-bottom: 10px; }
@@ -198,21 +216,6 @@ md-menu-bar.md-default-theme md-menu.md-open > button, md-menu-bar md-menu.md-op
   height: 225px; }
 
 @media (min-width: 550px) {
-  .share, .like {
-    float: right;
-    padding-left: 20px; }
-
-  .collab, .follow {
-    float: left;
-    padding-right: 20px; }
-
-  .land-rows {
-    max-width: 1020px;
-    height: 200px;
-    padding-left: 7%;
-    padding-right: 7%;
-    margin: 20px auto; }
-
   .land-rows > article {
     padding-top: 20px; } }
 @media (max-width: 549px) {
@@ -221,10 +224,10 @@ md-menu-bar.md-default-theme md-menu.md-open > button, md-menu-bar md-menu.md-op
     height: 100px;
     display: block; }
 
-  .land-rows {
-    padding: 30px; }
+  .land-rows > article {
+    padding-top: 0.5px; }
 
   article h2 {
-    text-align: center; } }
+    text-align: left; } }
 
 /*# sourceMappingURL=main.css.map */

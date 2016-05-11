@@ -70,6 +70,18 @@ router.param('comment', function(req, res, next, id) {
   });
 });
 
+// router.param('user', function(req, res, next, user_id) {
+//   var query = Comments.findById(user_id);
+//
+//   query.exec(function (err, comment){
+//     if (err) { return next(err); }
+//     if (!comment) { return next(new Error("We're sorry, that collaboration does not exist.")); }
+//
+//     req.comment = comment;
+//     return next();
+//   });
+// });
+
 router.get('/:card', function(req, res, next) {
   req.card.populate('comments', function(err, card) {
     res.json(card);
