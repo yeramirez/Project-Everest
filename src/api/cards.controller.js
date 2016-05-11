@@ -46,24 +46,6 @@ router.post('/', authCheck, function (req, res, next) {
 
 });
 
-// router.delete('/:id', function (req, res, next) {
-// 	Card.find(req.params.id, function (err, card) {
-// 		if (err) return next(err);
-// 		res.sendStatus(201);
-// 		console.log('Deleted Successfully!');
-// 	});
-// });
-
-// router.get('/:id', function(req, res, next) {
-//   console.log(req.body);
-//   // get the user starlord55
-//   Card.find({ _id: req.body.id }, function(err, id) {
-//     if (err) throw err;
-//     // object of the user
-//     console.log(id);
-//   });
-// })
-
 router.param('card', function(req, res, next, id) {
   var query = Card.findById(id);
 
@@ -76,14 +58,12 @@ router.param('card', function(req, res, next, id) {
   });
 });
 
-/////////
-
 router.param('comment', function(req, res, next, id) {
   var query = Comments.findById(id);
 
   query.exec(function (err, comment){
     if (err) { return next(err); }
-    if (!comment) { return next(new Error("can't find comment")); }
+    if (!comment) { return next(new Error("We're sorry, that collaboration does not exist.")); }
 
     req.comment = comment;
     return next();
@@ -126,7 +106,7 @@ router.post('/:card/comments', function(req, res, next) {
   });
 });
 
-router.put('/:card/comments/:comment/like', function(req, res, next) {
+router.put('/:card/comments/:comment/likes', function(req, res, next) {
   req.comment.like(function(err, comment){
     if (err) { return next(err); }
 
@@ -134,7 +114,7 @@ router.put('/:card/comments/:comment/like', function(req, res, next) {
   });
 });
 
-router.put('/:card/comments/:comment/dislike', function(req, res, next) {
+router.put('/:card/comments/:comment/dislikes', function(req, res, next) {
   req.comment.dislike(function(err, comment){
     if (err) { return next(err); }
 

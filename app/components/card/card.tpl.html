@@ -1,33 +1,31 @@
-<div>
-	<h3>
-		<h2>hi, this is card</h2>
-		<a ng-show="card.link" href="{{card.link}}">
-			{{card.lyrics}}
-		</a>
-		<span ng-hide="card.comment">
-			{{card.mood}}
-		</span>
-    <span>
-      {{card.author}}
-    </span>
-	</h3>
-</div>
-
-<div ng-repeat="comment in card.comments | orderBy: '-likes' ">
-	<span class="glyphicon glyphicon-thumbs-up" ng-click="addOne(comment)"></span>
-	{{comment.likes}} - by {{comment.author}}
-	<span style="font-size:20px; margin-left:10px">
-		{{comment.body}}
+<toolbar></toolbar>
+<div class="container" layout="column" layout-align="center">
+	<h2>"{{card.lyrics}}"</h2>
+	<span class="md-subhead">
+		{{card.mood}}
 	</span>
+  <span class="md-title">
+    {{card.author}}
+  </span>
+
+  <div ng-repeat="comment in card.comments | orderBy: '-likes' ">
+    <md-button ng-click="like(comment)" id="fav" class="md-icon-button fav-btn" aria-label="Favorite">
+      <ng-md-icon icon="thumb_up" size="24"></ng-md-icon>
+    </md-button>
+  	{{comment.likes}} - by {{comment.author}}
+  	<span style="font-size:20px; margin-left:10px">
+  		{{comment.body}}
+  	</span>
+  </div>
+
+  <form ng-submit="addComment()"
+  style="margin-top:30px">
+  	<h3>Add A Collaboration</h3>
+
+  	<div class="form-group">
+  		<input type="text" class="form-control" placeholder="comment" ng-model="body">
+  		</input>
+  	</div>
+  	<md-button type="submit" class="md-raised md-accent">Post</md-button>
+  </form>
 </div>
-
-<form ng-submit="addComment()"
-style="margin-top:30px">
-	<h3>Add a new comment</h3>
-
-	<div class="form-group">
-		<input type="text" class="form-control" placeholder="comment" ng-model="body">
-		</input>
-	</div>
-	<button type="submit" class="btn btn-primary">Post</button>
-</form>

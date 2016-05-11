@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var CommentSchema = new mongoose.Schema({
   body: String,
   author: String,
+  user_id: String,
   likes: {type: Number, default: 0},
   card: { type: mongoose.Schema.Types.ObjectId, ref: 'Card' }
 });
