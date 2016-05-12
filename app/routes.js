@@ -17,7 +17,6 @@ choral.config(['$stateProvider', '$urlRouterProvider', 'authProvider', '$httpPro
       store.set('profile', profile);
       store.set('token', idToken);
     });
-    console.log($location.path());
     $location.path('/dashboard');
   });
 
@@ -25,7 +24,6 @@ choral.config(['$stateProvider', '$urlRouterProvider', 'authProvider', '$httpPro
   authProvider.on('loginFailure', function($location) {
     console.log("Login Failed.");
     alert("I'm sorry. We could not identify you. Please try again.");
-    console.log($location.path());
     $location.path('/home');
   });
 

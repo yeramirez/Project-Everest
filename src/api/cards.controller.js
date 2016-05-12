@@ -5,7 +5,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var router = express.Router();
 var Card = require('../models/Card.js');
-var Comments = require('../models/Comments.js');
+var Collabs = require('../models/Collabs.js');
 var db = require('../db');
 var jwt = require('express-jwt');
 
@@ -50,40 +50,44 @@ router.param('card', function(req, res, next, id) {
   var query = Card.findById(id);
 
   query.exec(function (err, card){
-    if (err) { return next(err); }
-    if (!card) { return next(new Error("can't find card")); }
+    if (err) {
+      return next(err);
+    }
+    if (!card) {
+      return next(new Error("can't find card"));
+    }
 
     req.card = card;
     return next();
   });
 });
 
-router.param('comment', function(req, res, next, id) {
-  var query = Comments.findById(id);
+router.param('collab', function(req, res, next, id) {
+  var query = Collabs.findById(id);
 
-  query.exec(function (err, comment){
+  query.exec(function (err, collab){
     if (err) { return next(err); }
-    if (!comment) { return next(new Error("We're sorry, that collaboration does not exist.")); }
+    if (!collab) { return next(new Error("We're sorry, that collaboration does not exist.")); }
 
-    req.comment = comment;
+    req.collab = collab;
     return next();
   });
 });
 
 // router.param('user', function(req, res, next, user_id) {
-//   var query = Comments.findById(user_id);
+//   var query = collabs.findById(user_id);
 //
-//   query.exec(function (err, comment){
+//   query.exec(function (err, collab){
 //     if (err) { return next(err); }
-//     if (!comment) { return next(new Error("We're sorry, that collaboration does not exist.")); }
+//     if (!collab) { return next(new Error("We're sorry, that collaboration does not exist.")); }
 //
-//     req.comment = comment;
+//     req.collab = collab;
 //     return next();
 //   });
 // });
 
 router.get('/:card', function(req, res, next) {
-  req.card.populate('comments', function(err, card) {
+  req.card.populate('collabs', function(err, card) {
     res.json(card);
   });
 });
@@ -102,35 +106,35 @@ router.put('/:card/dislike', function(req, res, next) {
   });
 });
 
-router.post('/:card/comments', function(req, res, next) {
-  var comment = new Comments(req.body);
-  comment.card = req.card;
+router.post('/:card/collabs', function(req, res, next) {
+  var collab = new Collabs(req.body);
+  collab.card = req.card;
 
-  comment.save(function(err, comment){
+  collab.save(function(err, collab){
     if(err){ return next(err); }
 
-    req.card.comments.push(comment);
+    req.card.collabs.push(collab);
     req.card.save(function(err, card) {
       if(err){ return next(err); }
 
-      res.json(comment);
+      res.json(collab);
     });
   });
 });
 
-router.put('/:card/comments/:comment/likes', function(req, res, next) {
-  req.comment.like(function(err, comment){
+router.put('/:card/collabs/:collab/likes', function(req, res, next) {
+  req.collab.like(function(err, collab){
     if (err) { return next(err); }
 
-    res.json(comment);
+    res.json(collab);
   });
 });
 
-router.put('/:card/comments/:comment/dislikes', function(req, res, next) {
-  req.comment.dislike(function(err, comment){
+router.put('/:card/collabs/:collab/dislikes', function(req, res, next) {
+  req.collab.dislike(function(err, collab){
     if (err) { return next(err); }
 
-    res.json(comment);
+    res.json(collab);
   });
 });
 

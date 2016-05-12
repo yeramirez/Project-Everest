@@ -1,31 +1,27 @@
 <toolbar></toolbar>
-<div class="container" layout="column" layout-align="center">
-	<h2>"{{card.lyrics}}"</h2>
-	<span class="md-subhead">
+<div class="container" layout="column" layout-align="center center">
+  <img class="qbig_svg" src="components/img/quote.svg" alt="Quotations" />
+	<h2 class="in-ly">{{card.lyrics}}</h2>
+	<h6 class="md-subhead">
 		{{card.mood}}
-	</span>
-  <span class="md-title">
-    {{card.author}}
-  </span>
-
-  <div ng-repeat="comment in card.comments | orderBy: '-likes' ">
-    <md-button ng-click="like(comment)" id="fav" class="md-icon-button fav-btn" aria-label="Favorite">
+	</h6>
+  <h5 class="md-title">
+    @{{card.author}}
+  </h5>
+  <div ng-repeat="collab in card.collabs | orderBy: '-likes' ">
+    <md-button ng-click="like(collab)" id="fav" class="md-icon-button fav-btn" aria-label="Favorite">
       <ng-md-icon icon="thumb_up" size="24"></ng-md-icon>
     </md-button>
-  	{{comment.likes}} - by {{comment.author}}
-  	<span style="font-size:20px; margin-left:10px">
-  		{{comment.body}}
+  	{{collab.likes}} - by {{collab.author}}
+  	<span>
+  		{{collab.body}}
   	</span>
   </div>
-
-  <form ng-submit="addComment()"
-  style="margin-top:30px">
-  	<h3>Add A Collaboration</h3>
-
-  	<div class="form-group">
-  		<input type="text" class="form-control" placeholder="comment" ng-model="body">
-  		</input>
-  	</div>
-  	<md-button type="submit" class="md-raised md-accent">Post</md-button>
+  <form ng-submit="addCollab()">
+    <md-input-container class="md-block">
+      <label>Collaborate here...</label>
+      <textarea ng-model="body" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+    </md-input-container>
+    <md-button type="submit" class="md-raised md-accent">Post</md-button>
   </form>
 </div>

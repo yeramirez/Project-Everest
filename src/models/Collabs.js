@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var CommentSchema = new mongoose.Schema({
+var CollabSchema = new mongoose.Schema({
   body: String,
   author: String,
   user_id: String,
@@ -8,16 +8,16 @@ var CommentSchema = new mongoose.Schema({
   card: { type: mongoose.Schema.Types.ObjectId, ref: 'Card' }
 });
 
-CommentSchema.methods.like = function(cb) {
+CollabSchema.methods.like = function(cb) {
   this.likes += 1;
   this.save(cb);
 };
 
-CommentSchema.methods.dislike = function(cb) {
+CollabSchema.methods.dislike = function(cb) {
   this.likes -= 1;
   this.save(cb);
 }
 
-var Comment = mongoose.model('Comment', CommentSchema);
+var Collab = mongoose.model('Collab', CollabSchema);
 
-module.exports = Comment;
+module.exports = Collab;

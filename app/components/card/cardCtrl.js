@@ -10,25 +10,25 @@ choral.controller('CardCtrl', [
     $scope.user = auth.profile.nickname;
     $scope.user_id = auth.profile.user_id;
 
-    $scope.addComment = function () {
+    $scope.addCollab = function () {
       if ($scope.body === '') {
           return;
       }
-      CardSvc.addComment(card._id, {
+      CardSvc.addCollab(card._id, {
           body: $scope.body,
           author: $scope.user,
           user_id: $scope.user_id,
-      }).success(function (comment) {
-          $scope.card.comments.push(comment);
+      }).success(function (collab) {
+          $scope.card.collabs.push(collab);
       });
       $scope.body = '';
     };
 
-    $scope.like = function (comment) {
-      CardSvc.likeComment(card, comment);
+    $scope.like = function (collab) {
+      CardSvc.likeCollab(card, collab);
     };
 
-    $scope.dislike = function (comment) {
-      CardSvc.dislikeComment(card, comment);
+    $scope.dislike = function (collab) {
+      CardSvc.dislikeCollab(card, collab);
     };
   }]);

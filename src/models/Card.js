@@ -11,7 +11,7 @@ var CardSchema = new Schema ({
   user_id: String,
 	likes: { type: Number, default: 0 },
 	created: { type: Date, default: Date.now },
-	comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}]
+	collabs: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Collab'}]
 });
 
 CardSchema.methods.like = function(cb) {
