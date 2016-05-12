@@ -37,7 +37,7 @@ angular.module('choral.postList', [
       // for (var i = 0; i < $scope.cards.length; i++) {
       //   console.log(i);
       //   if ($scope.cards[i].mood == "Hopeful") {
-      // 
+      //
       //     $('#quote_svg').removeClass('st0');
       //     $('#quote_svg').addClass('st0-h');
       //   }

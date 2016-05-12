@@ -2,7 +2,7 @@
 var mongoose = require('mongoose');
 
 // make the connection to your db
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(process.env.MONGODB_URI);
 
 //check the connection
 var db = mongoose.connection;

@@ -1,4 +1,4 @@
-choral.config(function ($stateProvider, $urlRouterProvider, authProvider, $httpProvider, jwtInterceptorProvider, $mdThemingProvider, $mdIconProvider) {
+choral.config(['$stateProvider', '$urlRouterProvider', 'authProvider', '$httpProvider', 'jwtInterceptorProvider', '$mdThemingProvider', '$mdIconProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, authProvider, $httpProvider, jwtInterceptorProvider, $mdThemingProvider, $mdIconProvider, $locationProvider) {
   $mdIconProvider
     .iconSet("call", 'img/icons/sets/communication-icons.svg', 24)
     .iconSet("social", 'img/icons/sets/social-icons.svg', 24);
@@ -21,7 +21,7 @@ choral.config(function ($stateProvider, $urlRouterProvider, authProvider, $httpP
   });
 
   // What to do in the case of a failure
-  authProvider.on('loginFailure', function() {
+  authProvider.on('loginFailure', function($location) {
     console.log("Login Failed.");
     alert("I'm sorry. We could not identify you. Please try again.");
     $location.path('/home');
@@ -82,7 +82,7 @@ choral.config(function ($stateProvider, $urlRouterProvider, authProvider, $httpP
 
   $urlRouterProvider.otherwise('dashboard');
 
-});
+}]);
 
 choral.run(function(auth) {
   // This hooks al auth events to check everything as soon as the app starts

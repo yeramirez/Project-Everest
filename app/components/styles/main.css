@@ -48,7 +48,7 @@ a, a:hover, a:active {
   display: block;
   text-align: center;
   float: left;
-  height: 300px;
+  height: 350px;
   margin: 1rem;
   position: relative;
   width: 300px;
@@ -77,7 +77,12 @@ md-card-content > span {
 h6 {
   text-transform: uppercase;
   font-size: 0.7em;
-  color: #9E9E9E; }
+  color: #9E9E9E;
+  margin-bottom: 0;
+  margin-top: 15px; }
+
+.md-title {
+  font-size: 18px; }
 
 .t-btn {
   fill: #474a4f; }
@@ -116,6 +121,21 @@ md-card md-card-actions:not(.layout-column) .md-button.md-icon-button:last-of-ty
 .q_svg {
   height: 27px; }
 
+.qbig_svg {
+  margin: 20px;
+  height: 55px; }
+
+.in-ly {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+form {
+  height: 55px;
+  width: 1000px; }
+
+textarea#input_0 {
+  height: 80px; }
+
 .com {
   margin-left: 10px;
   padding-top: 4px;
@@ -142,10 +162,8 @@ md-card md-card-actions:not(.layout-column) .md-button.md-icon-button:last-of-ty
 textarea {
   outline: none;
   resize: none;
-  overflow: none; }
-
-#input_1 {
-  min-height: 80px; }
+  overflow: none;
+  height: 100px; }
 
 .mood {
   width: 136px; }
