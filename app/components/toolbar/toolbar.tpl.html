@@ -1,60 +1,32 @@
-<md-toolbar class="container-fluid">
-  <div class="md-toolbar-tools">
-    <h2>
-      <span class="brand md-primary" ui-sref="dashboard">Choral</span>
-    </h2>
-    <span flex></span>
-    <md-button
-      class="md-raised md-accent"
-      aria-label="New Post"
-      ui-sref="create"
-      ng-if="toolbar.auth.isAuthenticated">
-      New Post
-    </md-button>
-    <div layout="row">
-      <md-menu-bar>
-        <md-menu>
-          <button class="bar-link" ng-click="$mdOpenMenu()">
-            Options
-          </button>
-          <md-menu-content>
-            <md-menu-item>
-              <md-button
-                aria-label="New Post"
-                ui-sref="create"
-                ng-if="toolbar.auth.isAuthenticated"><ng-md-icon icon="create" class="t-btn" size="32"></ng-md-icon>
-                &nbsp;&nbsp;New Post
-              </md-button>
-            </md-menu-item>
-            <md-menu-item>
-              <md-button
-                aria-label="Dashboard"
-                ui-sref="dashboard"
-                ng-if="toolbar.auth.isAuthenticated"><ng-md-icon icon="dashboard" class="t-btn" size="32"></ng-md-icon>
-                &nbsp;&nbsp;Dashboard
-              </md-button>
-            </md-menu-item>
-            <md-menu-item>
-              <md-button
-                aria-label="Profile"
-                ui-sref="profile"
-                ng-if="toolbar.auth.isAuthenticated"><ng-md-icon icon="face"  size="32" class="t-btn"></ng-md-icon>
-                &nbsp;&nbsp;Profile
-              </md-button>
-            </md-menu-item>
-            <md-menu-item>
-                <md-button
-                  aria-label="Logout"
-                  type="submit"
-                  class="md-warn"
-                  ng-click="toolbar.logout()"
-                  ng-if="toolbar.auth.isAuthenticated"><ng-md-icon icon="logout" size="32" class="t-btn"></ng-md-icon>
-                  &nbsp;&nbsp;Log Out
-                </md-button>
-            </md-menu-item>
-          </md-menu-content>
-        </md-menu>
-      </md-menu-bar>
+<nav class="navbar y-nav">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img src="./components/img/logo.svg" alt="Logo" />
+      <a class="navbar-brand" ui-sref="dashboard">Choral</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <!-- <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+      </ul> -->
+      <ul class="nav navbar-nav navbar-right">
+        <li aria-label="New Post" ng-if="toolbar.auth.isAuthenticated"><a ui-sref="create">New Post</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Options <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li aria-label="New Post" ng-if="toolbar.auth.isAuthenticated"><a ui-sref="create">New Post</a></li>
+            <li aria-label="Dashboard" ng-if="toolbar.auth.isAuthenticated"><a ui-sref="dashboard">Dashboard</a></li>
+            <li aria-label="Profile" ng-if="toolbar.auth.isAuthenticated"><a ui-sref="profile">Profile</a></li>
+            <li role="separator" class="divider"></li>
+            <li aria-label="Logout" type="submit" class="md-warn" ng-click="toolbar.logout()" ng-if="toolbar.auth.isAuthenticated"><a>Logout</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
-</md-toolbar>
+</nav>

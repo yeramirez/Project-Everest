@@ -34,8 +34,9 @@ a, a:hover, a:active {
 .container > h1 {
   text-align: center; }
 
-.md-button span {
-  font-size: 1.3em; }
+.md-button > span {
+  font-size: 1.3em;
+  text-transform: none; }
 
 .md-menu {
   padding: 0 18px; }
@@ -52,7 +53,6 @@ article > h2 {
   background: #fff;
   border-radius: 2px;
   display: block;
-  text-align: center;
   float: left;
   height: 335px;
   margin: 1rem;
@@ -68,11 +68,23 @@ article > h2 {
   -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   -moz-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
 
+.card-inner {
+  text-align: center; }
+
+md-card md-card-content {
+  padding-top: 0px; }
+
 md-card-content > a > p {
   font-family: "Droid Serif", serif;
-  padding: 15px 10px;
+  padding: 10px 10px;
   font-size: 18px;
   color: #4F514F; }
+
+.time {
+  width: 50px;
+  text-align: center;
+  color: #4b5258;
+  font-size: 0.8em; }
 
 .md-subhead {
   letter-spacing: 1.5px; }
@@ -84,8 +96,7 @@ h6 {
   text-transform: uppercase;
   font-size: 0.7em;
   color: #9E9E9E;
-  margin-bottom: 0;
-  margin-top: 15px; }
+  margin-bottom: 0; }
 
 .md-title {
   font-size: 18px; }
@@ -223,11 +234,19 @@ footer, footer > nav > a {
   padding-top: 0.5px; }
 
 /* ---------- Toolbar ---------- */
-md-menu-item {
-  margin-bottom: 10px; }
+.y-nav {
+  padding: 10px;
+  background-color: #f5f5f5; }
 
-.md-button {
-  text-transform: none; }
+.icon-bar {
+  background-color: #313131; }
+
+.navbar-header > img {
+  height: 50px;
+  padding-right: 10px; }
+
+.navbar-brand {
+  float: right; }
 
 /* ---------- Profile ---------- */
 .profile {
