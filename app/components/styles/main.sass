@@ -28,22 +28,21 @@ body
   font-size: 1.1em
   font-weight: bold
   cursor: pointer
+  color: $base-color
 
 /* ------------ CTA ------------ */
 
 .logo
-  width: 200px
+  width: 300px
 
 .cta-inner
   clear: both
   text-align: center
-  color: $secondary-color
-  text-transform: capitalize
-  background-color: $base-color
+  background-color: #fafafa
   padding: 3%
 
 a, a:hover, a:active
-  color: #3B3B3B
+  color: #212121
   text-decoration: $no-decoration
 
 .container > h1
@@ -55,6 +54,12 @@ a, a:hover, a:active
 .md-menu
   padding: 0 18px
 
+article > h2
+  font-weight: bold
+  font-size: 1.5em
+
+.bar-link
+  color: #212121
 
 /* ------------ Feed ------------ */
 
@@ -64,7 +69,7 @@ a, a:hover, a:active
   display: block
   text-align: center
   float: left
-  height: 350px
+  height: 335px
   margin: 1rem
   position: relative
   width: 300px
@@ -191,6 +196,8 @@ textarea
   margin: 0 auto
 
 /* ------------ Body ------------ */
+md-toolbar:not(.md-menu-toolbar)
+  background-color: #F5F5F5
 
 .footer-cta
   text-align: center
@@ -221,7 +228,7 @@ footer, footer > nav > a
 
 .collab, .follow
   float: left
-  padding-right: 20px
+  padding-right: 35px
 
 .land-rows
   max-width: 1020px
@@ -240,9 +247,6 @@ md-menu-item
 .md-button
   text-transform: none
 
-md-menu-bar.md-default-theme md-menu.md-open > button, md-menu-bar md-menu.md-open > button, md-menu-bar.md-default-theme md-menu > button:focus, md-menu-bar md-menu > button:focus
-  background: transparent
-
 /* ---------- Profile ---------- */
 .profile
   text-align: center
@@ -253,7 +257,15 @@ md-menu-bar.md-default-theme md-menu.md-open > button, md-menu-bar md-menu.md-op
 .profile > img
   height: 225px
 
-// @media (min-device-width: 551px) and (max-device-width: 1011px)
+@media (min-width: 680px) and (max-width: 1011px)
+  .dashboard
+    max-width: 680px
+    margin: 0 auto
+
+@media (max-width: 679px)
+  .dashboard
+    max-width: 335px
+    margin: 0 auto
 
 @media (min-width: 550px)
   .land-rows > article
@@ -269,5 +281,5 @@ md-menu-bar.md-default-theme md-menu.md-open > button, md-menu-bar md-menu.md-op
   .land-rows > article
     padding-top: .5px
 
-  article h2
+  article > h2
     text-align: left
