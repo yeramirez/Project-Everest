@@ -110,6 +110,12 @@ router.put('/:card/likes', function(req, res, next) {
   });
 });
 
+router.get('/:card/likers', function(req, res, next) {
+  req.card.populate('likers', function(err, card) {
+    res.json(card.likers);
+  });
+});
+
 router.put('/:card/dislike', function(req, res, next) {
   req.card.dislike(function(err, card){
     if (err) { return next(err); }

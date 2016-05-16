@@ -9,6 +9,7 @@ var CardSchema = new Schema ({
 	author: String,
 	mood: String,
   user_id: String,
+  likers: [],
 	likes: { type: Number, default: 0 },
 	created: { type: Date, default: Date.now },
 	collabs: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Collab'}]
