@@ -1,6 +1,8 @@
 'use strict';
 
-if (!process.env.PORT) require('dotenv').config();
+if (!process.env.PORT) {
+  require('dotenv').config();
+}
 var express = require('express');
 var mongoose = require('mongoose');
 var router = express.Router();
@@ -62,6 +64,27 @@ router.param('card', function(req, res, next, id) {
   });
 });
 
+router.param('user', function(req, res, next, nickname) {
+  var query = Card.find({ author: nickname });
+
+  query.exec(function (err, card){
+    if (err) {
+      return next(err);
+    }
+    if (!card) {
+      return next(new Error("can't find card"));
+    }
+
+    req.card = card;
+
+    return next();
+  });
+});
+
+router.get('/user/:user', function (req, res) {
+  res.json(req.card);
+});
+
 router.param('collab', function(req, res, next, id) {
   var query = Collabs.findById(id);
 
@@ -73,18 +96,6 @@ router.param('collab', function(req, res, next, id) {
     return next();
   });
 });
-
-// router.param('user', function(req, res, next, user_id) {
-//   var query = collabs.findById(user_id);
-//
-//   query.exec(function (err, collab){
-//     if (err) { return next(err); }
-//     if (!collab) { return next(new Error("We're sorry, that collaboration does not exist.")); }
-//
-//     req.collab = collab;
-//     return next();
-//   });
-// });
 
 router.get('/:card', function(req, res, next) {
   req.card.populate('collabs', function(err, card) {

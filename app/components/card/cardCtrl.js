@@ -12,7 +12,7 @@ choral.controller('CardCtrl', [
 
     $scope.addCollab = function () {
       if ($scope.body === '') {
-          return;
+        return;
       }
       CardSvc.addCollab(card._id, {
           body: $scope.body,

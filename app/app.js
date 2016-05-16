@@ -11,7 +11,8 @@ var choral = angular.module ('choralApp', [
     'angular-jwt',
     'ngMaterial',
     'ngMdIcons',
-    'choral.postList'
+    'choral.postList',
+    'ngMessages'
 ]);
 
 choral.run(function ($rootScope, auth, store, jwtHelper, $location) {

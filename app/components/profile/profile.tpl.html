@@ -1,5 +1,37 @@
 <toolbar></toolbar>
-<div layout-padding class="profile">
+<div class="profile">
   <img class="img-circle" src="{{profile.picture}}" alt="Profile Picture" />
   <h3>@{{profile.nickname}}</h3>
+  <div layout-padding class="dashboard">
+    <md-card class="card col-xs-6 col-md-4" ng-repeat="card in cards | orderBy: '-created'">
+      <div class="time">
+        <ng-md-icon icon="access_time" class="card-btn" size="20"></ng-md-icon>
+        <p>{{card.created | date:'MMM d'}}</p>
+      </div>
+      <div class="card-inner">
+    		<md-card-content>
+          <a href="#/cards/{{card._id}}">
+            <img class="q_svg" src="components/img/quote.svg" alt="Quotations" />
+            <h6 class="md-subhead">{{card.mood}}</h6>
+    			  <p class="md-title">
+    				  {{card.lyrics}}
+    			  </p>
+            <span class="md-subhead">@{{card.author}}</span>
+          </a>
+    		</md-card-content>
+        <a href="#/cards/{{card._id}}">
+          <md-card-actions class="c-btn" layout="row">
+            <md-button class="md-raised collab-btn">Collab</md-button>
+            <span class="com">{{card.collabs.length}}</span>
+          </md-card-actions>
+        </a>
+        <md-card-actions class="favorite" layout="row">
+          <md-button ng-click="like(card)" class="md-icon-button" aria-label="Favorite">
+            <ng-md-icon icon="favorite" class="card-btn" size="24"></ng-md-icon>
+          </md-button>
+          <span class="y-lks">{{card.likes}}</span>
+        </md-card-actions>
+      </div>
+  	</md-card>
+  </div>
 </div>

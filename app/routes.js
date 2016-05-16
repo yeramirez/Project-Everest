@@ -12,7 +12,6 @@ choral.config(['$stateProvider', '$urlRouterProvider', 'authProvider', '$httpPro
 
   // What to do in the case of a success
   authProvider.on('loginSuccess', function ($location, profilePromise, idToken, store) {
-    console.log("Login Success");
     profilePromise.then(function(profile) {
       store.set('profile', profile);
       store.set('token', idToken);
@@ -72,9 +71,14 @@ choral.config(['$stateProvider', '$urlRouterProvider', 'authProvider', '$httpPro
     })
 
     .state('profile', {
-      url: '/profile',
+      url: '/profile/:nickname',
       templateUrl: 'components/profile/profile.tpl.html',
       controller: 'ProfileCtrl',
+      resolve: {
+        user: ['$stateParams', 'CardSvc', function ($stateParams, CardSvc) {
+          return CardSvc.getUser($stateParams.nickname);
+        }]
+      },
       data: {
         requiresLogin: true
       }

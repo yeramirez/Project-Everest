@@ -32,16 +32,6 @@ angular.module('choral.postList', [
 		CardSvc.getAll()
 		.then(function (cards) {
 			$scope.cards = cards.data;
-
-
-      // for (var i = 0; i < $scope.cards.length; i++) {
-      //   console.log(i);
-      //   if ($scope.cards[i].mood == "Hopeful") {
-      //
-      //     $('#quote_svg').removeClass('st0');
-      //     $('#quote_svg').addClass('st0-h');
-      //   }
-      // }
 		});
 	})();
 }]);

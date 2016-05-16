@@ -9,7 +9,7 @@ var Schema = mongoose.Schema;
 var UserSchema = new Schema ({
 	firstname: String,
 	lastname: String,
-  nickname: String,
+  username: String,
 	bio: String,
 	points: Number,
 	followers: [],

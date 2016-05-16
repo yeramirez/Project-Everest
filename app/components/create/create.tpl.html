@@ -1,9 +1,13 @@
 <toolbar></toolbar>
-<form class="addCard" ng-submit='addCard()'>
+<form name="card" class="addCard" ng-submit='addCard()'>
 	<div>
 		<md-input-container class="md-block">
 			<label>Lyrics - Character Limit 150</label>
-			<textarea ng-model="newCard.lyrics" md-maxlength="150" rows="7" md-select-on-focus></textarea>
+			<textarea ng-model="newCard.lyrics" name="lyrics" required md-maxlength="150" rows="7" md-select-on-focus></textarea>
+      <div ng-messages="card.lyrics.$error">
+        <div ng-message="required">Please enter lyrics.</div>
+        <div ng-message="md-maxlength">The name has to be less than 150 characters long.</div>
+      </div>
 		</md-input-container>
 	</div>
   <div>

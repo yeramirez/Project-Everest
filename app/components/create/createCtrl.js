@@ -18,16 +18,21 @@ choral.controller('CreateCtrl', function ($scope, CardSvc, $mdDialog, auth, $sta
 
   // Add a card using the add method
 	$scope.addCard = function () {
-    // Pass the card we set up earlier
-		CardSvc.add($scope.newCard)
-		.then(function () {
-      // Push the card into the array we made earlier too
-			$scope.cards.push($scope.newCard);
-      // Reset the value
-			$scope.newCard = '';
-      // Take me to the dashboard!
-      $state.go('dashboard');
-		});
+
+    if ($scope.newCard.lyrics == null || $scope.newCard.lyrics == '') {
+      console.log("I'm sorry, nothing was entered");
+    } else {
+      // Pass the card we set up earlier
+      CardSvc.add($scope.newCard)
+  		.then(function () {
+        // Push the card into the array we made earlier too
+  			$scope.cards.push($scope.newCard);
+        // Reset the value
+  			$scope.newCard = '';
+        // Take me to the dashboard!
+        $state.go('dashboard');
+  		});
+    }
 	}
 
 	$scope.removePost = function () {

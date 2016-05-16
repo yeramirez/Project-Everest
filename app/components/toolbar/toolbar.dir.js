@@ -13,11 +13,13 @@
     }
   }
 
-  function toolbarCtrl (auth, store, $location) {
+  function toolbarCtrl (auth, store, $location, $scope) {
     var vm = this;
     vm.login = login;
     vm.logout = logout;
     vm.auth = auth;
+
+    $scope.user = vm.auth.profile;
 
     function login () {
       auth.signin({}, function (profile, token) {

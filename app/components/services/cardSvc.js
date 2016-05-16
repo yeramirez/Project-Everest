@@ -4,7 +4,8 @@
 choral.service('CardSvc', ['$http', 'auth', function ($http, auth) {
 
   var y = { // for yanely
-    cards: []
+    cards: [],
+    users: []
   };
 
   // Get the cards from the api
@@ -24,6 +25,10 @@ choral.service('CardSvc', ['$http', 'auth', function ($http, auth) {
       .success(function (data) {
         y.cards.push(data);
     });
+  };
+
+  y.getUser = function (nickname) {
+    return $http.get('/api/cards/user/' + nickname)
   };
 
   y.like = function (card) {
