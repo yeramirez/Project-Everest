@@ -10,8 +10,8 @@ choral.controller('CreateCtrl', function ($scope, CardSvc, $mdDialog, auth, $sta
 
   // Set up the creation of a new card
   $scope.newCard = {
-    lyrics: '',
-    mood: '',
+    lyrics: "",
+    mood: "",
     author: $scope.nickname,
     user_id: $scope.user_id,
   }

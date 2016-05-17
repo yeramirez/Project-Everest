@@ -6,7 +6,7 @@
 			<textarea ng-model="newCard.lyrics" name="lyrics" required md-maxlength="150" rows="7" md-select-on-focus></textarea>
       <div ng-messages="card.lyrics.$error">
         <div ng-message="required">Please enter lyrics.</div>
-        <div ng-message="md-maxlength">The name has to be less than 150 characters long.</div>
+        <div ng-message="md-maxlength">The lyrics have to be less than 150 characters long.</div>
       </div>
 		</md-input-container>
 	</div>
@@ -19,6 +19,6 @@
     </md-input-container>
   </div>
   <md-input-container>
-    <md-button class="md-raised md-primary" type="submit">Post</md-button>
+    <md-button class="md-raised md-primary" type="submit">Post Lyrics</md-button>
   </md-input-container>
 </form>

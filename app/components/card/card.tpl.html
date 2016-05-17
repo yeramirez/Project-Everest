@@ -6,7 +6,7 @@
 		{{card.mood}}
 	</h6>
   <h5 class="md-title">
-    @{{card.author}}
+    @<a href="#/profile/{{card.author}}">{{card.author}}</a>
   </h5>
   <div ng-repeat="collab in card.collabs | orderBy: '-likes' ">
     <md-button ng-click="like(collab)" id="fav" class="md-icon-button fav-btn" aria-label="Favorite">
@@ -19,9 +19,9 @@
   </div>
   <form ng-submit="addCollab()">
     <md-input-container class="md-block">
-      <label>Collaborate here...</label>
+      <label>Collaborate here</label>
       <textarea ng-model="body" md-maxlength="150" rows="5" md-select-on-focus></textarea>
     </md-input-container>
-    <md-button type="submit" class="md-raised md-primary">Post</md-button>
+    <md-button type="submit" class="md-raised md-primary">Add Collab</md-button>
   </form>
 </div>

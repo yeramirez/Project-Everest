@@ -9,12 +9,6 @@ var router = express.Router();
 var Card = require('../models/Card.js');
 var Collabs = require('../models/Collabs.js');
 var db = require('../db');
-var jwt = require('express-jwt');
-
-var authCheck = jwt({
-  secret: new Buffer(process.env.AUTH_SECRET, 'base64'),
-  audience: 'Cc17tiuA3SGvx4NR3OHztSuXXKKZlRmU'
-});
 
 router.get('/', function (req, res, next) {
 	Card.find(function (err, cards) {
@@ -25,7 +19,7 @@ router.get('/', function (req, res, next) {
   });
 });
 
-router.post('/', authCheck, function (req, res, next) {
+router.post('/', function (req, res, next) {
   console.log("---------- The Body ----------");
   console.log(req.body);
 

@@ -1,7 +1,7 @@
 <toolbar></toolbar>
 <div class="profile">
   <img class="img-circle" src="{{profile.picture}}" alt="Profile Picture" />
-  <h3>@{{profile.nickname}}</h3>
+  <h3>@{{username}}</h3>
   <div layout-padding class="dashboard">
     <md-card class="card col-xs-6 col-md-4" ng-repeat="card in cards | orderBy: '-created'">
       <div class="time">
