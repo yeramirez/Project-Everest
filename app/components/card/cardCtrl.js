@@ -12,18 +12,19 @@ choral.controller('CardCtrl', [
 
 
     $scope.addCollab = function () {
-      if ($scope.body === '') {
-        return;
-      }
-      CardSvc.addCollab(card._id, {
+      if ($scope.body == null || $scope.body == "") {
+        console.log('Sorry, nothing was entered!');
+      } else {
+        CardSvc.addCollab(card._id, {
           body: $scope.body,
           author: user,
           user_id: $scope.user_id
-      }).success(function (collab) {
-        console.log('I am being pushed!');
-        $scope.card.collabs.push(collab);
-      });
-      $scope.body = '';
+        }).success(function (collab) {
+          console.log('I am being pushed!');
+          $scope.card.collabs.push(collab);
+        });
+        $scope.body = "";
+      }
     };
 
     $scope.like = function (collab) {

@@ -5,6 +5,7 @@ var CollabSchema = new mongoose.Schema({
   author: String,
   user_id: String,
   likes: {type: Number, default: 0},
+  created: { type: Date, default: Date.now },
   card: { type: mongoose.Schema.Types.ObjectId, ref: 'Card' }
 });
 

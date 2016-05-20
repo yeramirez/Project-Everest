@@ -1,27 +1,37 @@
 <toolbar></toolbar>
-<div class="container" layout="column" layout-align="center center">
-  <img class="qbig_svg" src="components/img/quote.svg" alt="Quotations" />
-	<h2 class="in-ly">{{card.lyrics}}</h2>
-	<h6 class="md-subhead">
-		{{card.mood}}
-	</h6>
-  <h5 class="md-title">
-    @<a href="#/profile/{{card.author}}">{{card.author}}</a>
-  </h5>
-  <div ng-repeat="collab in card.collabs | orderBy: '-likes' ">
-    <md-button ng-click="like(collab)" id="fav" class="md-icon-button fav-btn" aria-label="Favorite">
-      <ng-md-icon icon="thumb_up" size="24"></ng-md-icon>
-    </md-button>
-  	{{collab.likes}} - by {{collab.author}}
-  	<span>
-  		{{collab.body}}
-  	</span>
+<div class="container" layout="column" >
+  <div class="card-info">
+    <img class="qbig_svg" src="components/img/quote.svg" alt="Quotations" />
+  	<h2 class="in-ly">{{card.lyrics}}</h2>
+  	<h6 class="md-subhead">
+  		{{card.mood}}
+  	</h6>
+    <h5 class="md-title">
+      @<a href="#/profile/{{card.author}}">{{card.author}}</a>
+    </h5>
+    <form name="collab" ng-submit="addCollab()">
+      <md-input-container class="md-block">
+        <label>Collaborate here</label>
+        <textarea required ng-model="body" name="info" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+        <div ng-messages="collab.info.$error">
+          <div ng-message="required">Please enter lyrics.</div>
+          <div ng-message="md-maxlength">The lyrics have to be less than 150 characters long.</div>
+        </div>
+      </md-input-container>
+      <md-button type="submit" class="md-raised md-primary my-btn">Add Collab</md-button>
+    </form>
   </div>
-  <form ng-submit="addCollab()">
-    <md-input-container class="md-block">
-      <label>Collaborate here</label>
-      <textarea ng-model="body" md-maxlength="150" rows="5" md-select-on-focus></textarea>
-    </md-input-container>
-    <md-button type="submit" class="md-raised md-primary">Add Collab</md-button>
-  </form>
+  <div>
+    <div ng-repeat="collab in card.collabs | orderBy: '-likes' ">
+      <h5>
+        {{collab.body}}
+      </h5>
+      <md-card-actions>
+        <md-button ng-click="like(collab)" id="fav" class="md-icon-button fav-btn" aria-label="Favorite">
+          <ng-md-icon icon="favorite" size="24"></ng-md-icon>
+        </md-button>
+        <span class="y-lks">{{collab.likes}}</span>&nbsp;&nbsp;@{{collab.author}} on {{collab.created | date}}
+      </md-card-actions>
+    </div>
+  </div>
 </div>
