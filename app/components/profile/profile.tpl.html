@@ -1,8 +1,7 @@
 <toolbar></toolbar>
 <div class="profile">
-  <img class="img-circle" src="{{profile.picture}}" alt="Profile Picture" />
   <h3>@{{username}}</h3>
-  <div layout-padding class="dashboard">
+  <div layout-padding class="dashboard profile-feed">
     <md-card class="card col-xs-6 col-md-4" ng-repeat="card in cards | orderBy: '-created'">
       <div class="time">
         <ng-md-icon icon="access_time" class="card-btn" size="20"></ng-md-icon>

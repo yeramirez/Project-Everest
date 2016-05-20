@@ -9,8 +9,14 @@ var router = express.Router();
 var Card = require('../models/Card.js');
 var Collabs = require('../models/Collabs.js');
 var db = require('../db');
+var jwt = require('express-jwt');
 
-router.get('/', function (req, res, next) {
+var authCheck = jwt({
+  secret: new Buffer(process.env.AUTH_SECRET, 'base64'),
+  audience: process.env.AUTH_AUDIENCE
+});
+
+router.get('/cards', authCheck, function (req, res, next) {
 	Card.find(function (err, cards) {
     if(err) {
       return next(err);
@@ -19,7 +25,7 @@ router.get('/', function (req, res, next) {
   });
 });
 
-router.post('/', function (req, res, next) {
+router.post('/cards', authCheck, function (req, res, next) {
   console.log("---------- The Body ----------");
   console.log(req.body);
 
@@ -91,34 +97,35 @@ router.param('collab', function(req, res, next, id) {
   });
 });
 
-router.get('/:card', function(req, res, next) {
+router.get('/cards/:card', function(req, res, next) {
   req.card.populate('collabs', function(err, card) {
     res.json(card);
   });
 });
 
-router.put('/:card/likes', function(req, res, next) {
+router.put('/cards/:card/likes', function(req, res, next) {
   req.card.like(function(err, card){
     if (err) { return next(err); }
     res.json(card);
   });
 });
 
-router.get('/:card/likers', function(req, res, next) {
+router.get('/cards/:card/likers', function(req, res, next) {
   req.card.populate('likers', function(err, card) {
     res.json(card.likers);
   });
 });
 
-router.put('/:card/dislike', function(req, res, next) {
+router.put('/cards/:card/dislike', function(req, res, next) {
   req.card.dislike(function(err, card){
     if (err) { return next(err); }
     res.json(card);
   });
 });
 
-router.post('/:card/collabs', function(req, res, next) {
+router.post('/cards/:card/collabs', function(req, res, next) {
   var collab = new Collabs(req.body);
+  console.log(req.body);
   collab.card = req.card;
 
   collab.save(function(err, collab){
@@ -133,7 +140,17 @@ router.post('/:card/collabs', function(req, res, next) {
   });
 });
 
-router.put('/:card/collabs/:collab/likes', function(req, res, next) {
+router.get('/cards/:card/collabs', function (req, res, next) {
+  Collabs.find(function (err, collabs) {
+    if(err) {
+      return next(err);
+    }
+    console.log(collabs);
+    res.json(collabs);
+  });
+})
+
+router.put('/cards/:card/collabs/:collab/likes', function(req, res, next) {
   req.collab.like(function(err, collab){
     if (err) { return next(err); }
 
@@ -141,7 +158,7 @@ router.put('/:card/collabs/:collab/likes', function(req, res, next) {
   });
 });
 
-router.put('/:card/collabs/:collab/dislikes', function(req, res, next) {
+router.put('/cards/:card/collabs/:collab/dislikes', function(req, res, next) {
   req.collab.dislike(function(err, collab){
     if (err) { return next(err); }
 

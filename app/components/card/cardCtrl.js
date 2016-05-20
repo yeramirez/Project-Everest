@@ -7,8 +7,9 @@ choral.controller('CardCtrl', [
   'auth',
   function ($scope, CardSvc, card, auth) {
     $scope.card = card;
-    $scope.user = auth.profile.nickname;
+    var user = auth.profile.nickname;
     $scope.user_id = auth.profile.user_id;
+
 
     $scope.addCollab = function () {
       if ($scope.body === '') {
@@ -16,10 +17,11 @@ choral.controller('CardCtrl', [
       }
       CardSvc.addCollab(card._id, {
           body: $scope.body,
-          author: $scope.user,
-          user_id: $scope.user_id,
+          author: user,
+          user_id: $scope.user_id
       }).success(function (collab) {
-          $scope.card.collabs.push(collab);
+        console.log('I am being pushed!');
+        $scope.card.collabs.push(collab);
       });
       $scope.body = '';
     };

@@ -28,7 +28,7 @@ choral.service('CardSvc', ['$http', 'auth', function ($http, auth) {
   };
 
   y.getUser = function (nickname) {
-    return $http.get('/api/cards/user/' + nickname)
+    return $http.get('/api/user/' + nickname)
   };
 
   y.like = function (card) {
