@@ -282,12 +282,11 @@ footer, footer > nav > a {
 .profile > img {
   height: 225px; }
 
-.profile > h3 {
+.profile > div > h3 {
   text-transform: uppercase; }
 
 .profile-feed {
-  margin-top: 10px;
-  border-top: 2px solid #EDEFF2; }
+  margin-top: 10px; }
 
 @media (min-width: 680px) and (max-width: 1011px) {
   .dashboard {

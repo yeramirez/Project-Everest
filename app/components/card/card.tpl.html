@@ -30,7 +30,7 @@
         <md-button ng-click="like(collab)" id="fav" class="md-icon-button fav-btn" aria-label="Favorite">
           <ng-md-icon icon="favorite" size="24"></ng-md-icon>
         </md-button>
-        <span class="y-lks">{{collab.likes}}</span>&nbsp;&nbsp;@{{collab.author}} on {{collab.created | date}}
+        <span class="y-lks">{{collab.likes}}</span>&nbsp;&nbsp;@{{collab.author}} on {{collab.created | date: 'medium'}}
       </md-card-actions>
     </div>
   </div>

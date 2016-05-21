@@ -23,8 +23,8 @@ choral.controller('CardCtrl', [
           console.log('I am being pushed!');
           $scope.card.collabs.push(collab);
         });
-        $scope.body = "";
       }
+      $scope.body = "";
     };
 
     $scope.like = function (collab) {

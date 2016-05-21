@@ -25,7 +25,7 @@ Below are defined user stories that will be followed during the building of this
 | D202          | User should be able to 'like' a card								   	| Complete |
 | D203          | User should be able to 'follow' another User							| Out of Scope |
 | D204          | User should be able to 'collab' with another user's card			   	| Complete |
-| D205          | User should be able to click on a username on a card and go to their profile				| In Progress |
+| D205          | User should be able to click on a username on a card and go to their profile				| Complete |
 | D206          | User should be able to view how many likes a card has				  	| Complete |
 | ----          | ------------------------------------------------------				| ---------- |
 | D300          | User should be able to see posted cards     						   	| Complete |

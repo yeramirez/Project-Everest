@@ -1,6 +1,10 @@
 <toolbar></toolbar>
 <div class="profile">
-  <h3>@{{username}}</h3>
+  <div>
+    <h3>@{{username}}</h3>
+    <h4 class="md-subhead">{{cards.length}} Posts</h4>
+  </div>
+
   <div layout-padding class="dashboard profile-feed">
     <md-card class="card col-xs-6 col-md-4" ng-repeat="card in cards | orderBy: '-created'">
       <div class="time">
