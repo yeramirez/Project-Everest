@@ -242,11 +242,11 @@ footer, footer > nav > a {
 
 .share, .like {
   float: right;
-  padding-left: 20px; }
+  padding-left: 10px; }
 
 .collab, .follow {
   float: left;
-  padding-right: 35px; }
+  padding-right: 25px; }
 
 .land-rows {
   max-width: 1020px;
