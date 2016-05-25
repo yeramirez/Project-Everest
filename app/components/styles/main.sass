@@ -63,6 +63,9 @@ article > h2
 .bar-link
   color: #212121
 
+.fav-btn-fill
+  fill: red
+
 /* ------------ Feed ------------ */
 
 .card
@@ -193,12 +196,16 @@ textarea#input_0
 
 .card-info
   text-align: center
-  max-width: 700px
+  width: 75%
+  margin: 0 auto
+
+.card-info  h3
+  width: 80%
   margin: 0 auto
 
 .container > div:nth-of-type(2)
   margin: 0 auto 40px auto
-  max-width: 700px
+  width: 65%
 
 .container > div:nth-of-type(2) > div > h5
   font-family: $font-stack-tertiary
@@ -313,14 +320,23 @@ footer, footer > nav > a
     max-width: 680px
     margin: 0 auto
 
+  .container > div:nth-of-type(2)
+    width: 80%
+
 @media (max-width: 679px)
   .dashboard
     max-width: 335px
     margin: 0 auto
 
-@media (min-width: 550px)
+  .container > div:nth-of-type(2)
+    width: 80%
+
+@media (min-width: 550px) and (max-width: 900px)
   .land-rows > article
     padding-top: 20px
+
+  .container > div:nth-of-type(2)
+    width: 80%
 
 @media (max-width: 549px)
   .index-icon
@@ -333,3 +349,6 @@ footer, footer > nav > a
 
   article > h2
     text-align: left
+
+  .container > div:nth-of-type(2)
+    width: 90%

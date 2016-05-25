@@ -2,7 +2,7 @@
 <div class="container" layout="column" >
   <div class="card-info">
     <img class="qbig_svg" src="components/img/quote.svg" alt="Quotations" />
-  	<h2 class="in-ly">{{card.lyrics}}</h2>
+  	<h3 class="in-ly">{{card.lyrics}}</h3>
   	<h6 class="md-subhead">
   		{{card.mood}}
   	</h6>
@@ -30,7 +30,7 @@
         <md-button ng-click="like(collab)" id="fav" class="md-icon-button fav-btn" aria-label="Favorite">
           <ng-md-icon icon="favorite" size="24"></ng-md-icon>
         </md-button>
-        <span class="y-lks">{{collab.likes}}</span>&nbsp;&nbsp;@{{collab.author}} on {{collab.created | date: 'medium'}}
+        <span class="y-lks">{{collab.likes}}</span>&nbsp;&nbsp;@{{collab.author}} on {{collab.created | date: 'short'}}
       </md-card-actions>
     </div>
   </div>

@@ -5,3 +5,7 @@
 //     e.preventDefault();
 //   });
 // });
+
+$('fav-btn').on('click', function(){
+  alert('Ive been clicked!'); // change path fill to blue
+});
