@@ -16,7 +16,7 @@ var authCheck = jwt({
   audience: process.env.AUTH_AUDIENCE
 });
 
-router.get('/cards', authCheck, function (req, res, next) {
+router.get('/cards', function (req, res, next) {
 	Card.find(function (err, cards) {
     if(err) {
       return next(err);
@@ -110,10 +110,19 @@ router.put('/cards/:card/likes', function(req, res, next) {
   });
 });
 
-router.get('/cards/:card/likers', function(req, res, next) {
-  req.card.populate('likers', function(err, card) {
-    res.json(card.likers);
+router.get('/cards/:card/liked', function(req, res, next) {
+  req.card.populate('liked', function(err, card) {
+    res.json(card.liked);
   });
+});
+
+router.put('/cards/:card/liked', function(req, res, next) {
+  console.log ("----------RESPONSE01-----------");
+  console.log(req.body);
+
+  var cardinUse = req.card;
+
+  console.log(cardinUse);
 });
 
 router.put('/cards/:card/dislike', function(req, res, next) {

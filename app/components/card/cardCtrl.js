@@ -10,7 +10,6 @@ choral.controller('CardCtrl', [
     var user = auth.profile.nickname;
     $scope.user_id = auth.profile.user_id;
 
-
     $scope.addCollab = function () {
       if ($scope.body == null || $scope.body == "") {
         console.log('Sorry, nothing was entered!');

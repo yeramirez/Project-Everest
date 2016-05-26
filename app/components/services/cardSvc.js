@@ -40,12 +40,16 @@ choral.service('CardSvc', ['$http', 'auth', function ($http, auth) {
       });
   };
 
-  // y.dislike = function (card) {
-  //   return $http.put('/api/cards/' + card._id + '/dislikes')
-  //     .success(function(data) {
-  //       card.likes -= 1;
-  //     });
-  // };
+  y.addUserLike = function (id, person) {
+    // pulling from /api/cards/1234/likes
+    console.log("PERSONS NICKNAME: " + person);
+    return $http.put('/api/cards/' + id + '/liked', person)
+      // on success add it brotha
+      .success(function () {
+        // confirms that the collaborations has been added
+        console.log('Added liked user!');
+      });
+  };
 
   // grab a single card from server
   y.get = function (id) {
@@ -62,7 +66,7 @@ choral.service('CardSvc', ['$http', 'auth', function ($http, auth) {
         .success(function () {
           // confirms that the collaborations has been added
           console.log('Added collaboration!');
-        })
+        });
   };
 
   // like a collaboration on a post
@@ -75,12 +79,6 @@ choral.service('CardSvc', ['$http', 'auth', function ($http, auth) {
       });
   };
 
-  // y.dislikeCollab = function (card, collab) {
-  //   return $http.put('/api/cards/' + card._id + '/collabs/' + collab._id + '/dislikes')
-  //     .success(function (data) {
-  //       collab.likes -= 1;
-  //     });
-  // };
   // and most importantly
   return y;
 }]);

@@ -15,34 +15,21 @@ body {
   color: $base-color;
 }
 
-/* ------------ Navigation ------------ */
-
-.cta-outer > nav {
-  padding-top: 30px;
-  padding-right: 10%;
-  height: 25px;
-  margin-bottom: 5%;
-  text-align: right;
-}
-
-.brand {
-  font-size: 1.1em;
-  font-weight: bold;
-  cursor: pointer;
-  color: $base-color;
-}
-
-/* ------------ CTA ------------ */
-
-.logo {
-  width: 300px;
-}
+/*-----------------------------------------
+-------------------------------------------
+            CTA - Splash Page
+-------------------------------------------
+-------------------------------------------*/
 
 .cta-inner {
   clear: both;
   text-align: center;
   background-color: #EDEFF2;
   padding: 3%;
+
+  img {
+    width: 300px;
+  }
 }
 
 a, a:hover, a:active {
@@ -50,18 +37,10 @@ a, a:hover, a:active {
   text-decoration: $no-decoration;
 }
 
-.container > h1 {
-  text-align: center;
-}
-
 .md-button > span {
   font-size: 1.3em;
   text-transform: none;
   margin: 5px;
-}
-
-.md-menu {
-  padding: 0 18px;
 }
 
 article > h2 {
@@ -74,10 +53,14 @@ article > h2 {
 }
 
 .fav-btn-fill {
-  fill: red;
+  fill: #EC3345;
 }
 
-/* ------------ Feed ------------ */
+/*-----------------------------------------
+-------------------------------------------
+            Feed / Dashboard
+-------------------------------------------
+-------------------------------------------*/
 
 .card {
   background: #fff;
@@ -100,34 +83,86 @@ article > h2 {
   -moz-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.card-inner {
-  text-align: center;
-}
+md-card {
+  div:first-of-type {
+    width: 50px;
+    text-align: center;
+    color: #4b5258;
+    font-size: 0.8em;
 
-md-card md-card-content {
-  padding-top: 0px;
-}
+    ng-md-icon {
+      fill: #e0e0e0;
+    }
+  }
 
-md-card-content > a > p {
-  font-family: $font-stack-tertiary;
-  padding: 10px 10px;
-  font-size: 18px;
-  color: #4F514F;
-}
+  div:nth-of-type(2) {
+    text-align: center;
 
-.time {
-  width: 50px;
-  text-align: center;
-  color: #4b5258;
-  font-size: 0.8em;
-}
+    md-card-content {
+      padding-top: 0px;
 
-.md-subhead {
-  letter-spacing: 1.5px;
-}
+      span {
+        font-family: $font-stack-primary;
+      }
 
-md-card-content > span {
-  font-family: $font-stack-primary;
+      a {
+        img {
+          height: 27px;
+        }
+
+        h6 {
+          letter-spacing: 1.5px;
+        }
+
+        p {
+          font-family: $font-stack-tertiary;
+          padding: 10px 10px;
+          font-size: 18px;
+          color: #4F514F;
+        }
+      }
+    }
+
+    a {
+      md-card-actions {
+        position: absolute;
+        bottom: 3%;
+        right: auto;
+
+        .md-raised, .md-raised:not([disabled]):hover {
+          min-width: 50px;
+          min-height: 28px;
+          line-height: normal;
+          font-weight: bold;
+          height: 20px;
+          font-size: 0.8em;
+          color: $secondary-color;
+          background-color: #32DE7F;
+        }
+      }
+    }
+  }
+
+  .favorite {
+    position: absolute;
+    bottom: 3%;
+    right: 15px;
+    height: 40px;
+    width: 75px;
+    margin-right: 0px;
+
+    span {
+      height: 20px;
+      margin-top: 16px;
+      color: #CBC9CF;
+    }
+  }
+
+  md-card-actions:not(.layout-column) {
+    .md-button.md-icon-button:last-of-type {
+      margin-right: 0px;
+    }
+  }
 }
 
 h6 {
@@ -137,44 +172,7 @@ h6 {
   margin-bottom: 0;
 }
 
-.md-title {
-  font-size: 18px;
-}
-
-.t-btn {
-  fill: #474a4f;
-}
-
-.c-btn > .collab-btn, .c-btn > .collab-btn:hover, .c-btn > .md-raised:not([disabled]):hover {
-  min-width: 50px;
-  min-height: 28px;
-  line-height: normal;
-  font-weight: bold;
-  height: 20px;
-  font-size: 0.8em;
-  color: $secondary-color;
-  background-color: #32DE7F;
-}
-
-.c-btn {
-  position: absolute;
-  bottom: 3%;
-  right: auto;
-}
-
-.favorite {
-  position: absolute;
-  bottom: 3%;
-  right: 15px;
-  height: 40px;
-  width: 80px;
-}
-
-.my-btn {
-  border-radius: 25px;
-  padding: 0px 11px;
-  margin-left: 0px;
-}
+.md-title { font-size: 18px; }
 
 .md-button.md-icon-button {
   height: 52px;
@@ -182,25 +180,12 @@ h6 {
   margin: 0;
 }
 
-md-card md-card-actions:not(.layout-column) .md-button.md-icon-button:last-of-type {
-  margin-right: 0px;
-}
-
-.card-btn, .fav-btn {
+.fav-btn {
   fill: #e0e0e0;
 }
 
 .liked {
   fill: #FF3030;
-}
-
-.q_svg {
-  height: 27px;
-}
-
-.qbig_svg {
-  margin: 20px;
-  height: 45px;
 }
 
 .in-ly {
@@ -226,96 +211,108 @@ textarea#input_0 {
 }
 
 .y-lks {
-  height: 20px;
-  margin-top: 16px;
-  color: #CBC9CF;
+
 }
 
-.card-info {
-  text-align: center;
-  width: 75%;
-  margin: 0 auto;
+.container {
+  div:first-of-type > div {
+    text-align: center;
+    width: 75%;
+    margin: 0 auto;
+
+    img {
+      margin: 20px;
+      height: 45px;
+    }
+
+    h3 {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+
+  div:nth-of-type(2) {
+    margin: 0 auto 40px auto;
+    width: 65%;
+
+    div > h5 {
+      font-family: $font-stack-tertiary;
+      padding: 15px;
+      background-color: #EDEFF2;
+    }
+  }
 }
 
-.card-info h3 {
-  width: 80%;
-  margin: 0 auto;
-}
-
-.container > div:nth-of-type(2) {
-  margin: 0 auto 40px auto;
-  width: 65%;
-}
-
-.container > div:nth-of-type(2) > div > h5 {
-  font-family: $font-stack-tertiary;
-  padding: 15px;
-  background-color: #EDEFF2;
-}
-
-/* ------------ New Card ------------ */
+/*-----------------------------------------
+-------------------------------------------
+                Create Card
+-------------------------------------------
+-------------------------------------------*/
 
 .addCard {
   height: 300px;
   max-width: 500px;
   width: 75%;
   margin: 5% auto;
+
+  button[type="submit"] {
+    background-color: $secondary-color;
+    border-radius: 3px;
+    border: none;
+    color: $base-color;
+  }
+
+  div:first-of-type {
+    md-input-container {
+      textarea {
+        outline: none;
+        resize: none;
+        overflow: none;
+        height: 100px;
+      }
+    }
+  }
+
+  div:nth-of-type(2) {
+    md-input-container {
+      width: 136px;
+    }
+  }
 }
 
-.addCard > button[type="submit"] {
-  background-color: $secondary-color;
-  border-radius: 3px;
-  border: none;
-  color: $base-color;
-}
-
-textarea {
-  outline: none;
-  resize: none;
-  overflow: none;
-  height: 100px;
-}
-
-.mood {
-  width: 136px;
-}
+/*-----------------------------------------
+-------------------------------------------
+                    Body
+-------------------------------------------
+-------------------------------------------*/
 
 .dashboard {
   max-width: 1012px;
   margin: 0 auto;
 }
 
-/* ------------ Body ------------ */
-md-toolbar:not(.md-menu-toolbar) {
-  background-color: #EDEFF2;
-}
-
 .footer-cta {
   text-align: center;
   background-color: #EDEFF2;
   padding: 25px;
-}
 
-.footer-cta h2 {
-  font-weight: bold;
-}
+  h2 {
+    font-weight: bold;
+  }
 
-.footer-cta p {
-  margin-top: 10px;
-}
+  p {
+    margin-top: 10px;
+  }
 
-.footer-cta > button {
-  margin-top: 1%;
+  button {
+    margin-top: 1%;
+  }
 }
 
 footer, footer > nav > a {
   text-align: center;
   margin: 20px;
   color: $base-color;
-}
-
-.index-icon {
-  height: 150px;
 }
 
 .share, .like {
@@ -334,49 +331,82 @@ footer, footer > nav > a {
   padding-left: 7%;
   padding-right: 7%;
   margin: 20px auto;
+
+  article {
+    padding-top: 0.5px;
+  }
+
+  img {
+    height: 150px;
+  }
 }
 
-.land-rows > article {
-  padding-top: 0.5px;
+/*-----------------------------------------
+-------------------------------------------
+                  Navbar
+-------------------------------------------
+-------------------------------------------*/
+
+.brand {
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  color: $base-color;
 }
 
-/* ---------- Toolbar ---------- */
-.y-nav {
+.navbar {
   padding: 10px;
   border-bottom: 1px solid #D8D7D7;
+
+  div {
+    div:first-of-type {
+      button {
+        span {
+          background-color: #212121;
+        }
+      }
+
+      img {
+        height: 50px;
+        padding-right: 10px;
+      }
+
+      a {
+        float: right;
+      }
+    }
+  }
 }
 
-.icon-bar {
-  background-color: #212121;
-}
+/*-----------------------------------------
+-------------------------------------------
+                  Profile
+-------------------------------------------
+-------------------------------------------*/
 
-.navbar-header > img {
-  height: 50px;
-  padding-right: 10px;
-}
-
-.navbar-brand {
-  float: right;
-}
-
-/* ---------- Profile ---------- */
 .profile {
   text-align: center;
   max-width: 1040px;
   margin: 0 auto;
+
+  img {
+    height: 225px;
+  }
+
+  div:first-of-type > h3 {
+    text-transform: uppercase;
+  }
+
+  div:nth-of-type(2) {
+    margin-top: 10px;
+  }
 }
 
-.profile > img {
-  height: 225px;
-}
-
-.profile > div > h3 {
-  text-transform: uppercase;
-}
-
-.profile-feed {
-  margin-top: 10px;
-}
+/*-----------------------------------------
+-------------------------------------------
+                Media Queries
+-------------------------------------------
+-------------------------------------------*/
 
 @media (min-width: 680px) and (max-width: 1011px) {
   .dashboard {
@@ -411,14 +441,16 @@ footer, footer > nav > a {
 }
 
 @media (max-width: 549px) {
-  .index-icon {
-    margin: auto;
-    height: 100px;
-    display: block;
-  }
+  .land-rows {
+    article {
+      padding-top: 0.5px;
+    }
 
-  .land-rows > article {
-    padding-top: 0.5px;
+    img {
+      margin: auto;
+      height: 100px;
+      display: block;
+    }
   }
 
   article > h2 {

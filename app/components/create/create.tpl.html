@@ -11,7 +11,7 @@
 		</md-input-container>
 	</div>
   <div>
-    <md-input-container class="mood">
+    <md-input-container>
       <label>Select Mood</label>
       <md-select ng-model="newCard.mood">
         <md-option ng-repeat="mood in moods" value="{{mood}}">{{mood}}</md-option>
@@ -19,6 +19,6 @@
     </md-input-container>
   </div>
   <md-input-container>
-    <md-button class="md-raised md-primary my-btn" type="submit">Post Lyrics</md-button>
+    <md-button class="md-raised md-primary" type="submit">Post Lyrics</md-button>
   </md-input-container>
 </form>
