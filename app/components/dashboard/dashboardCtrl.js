@@ -21,6 +21,9 @@ angular.module('choral.postList', [
   $scope.like = function (card) {
     // card.likes += 1;
     CardSvc.like(card);
+    var hellothere = JSON.stringify(card);
+    console.log("The card is " + hellothere);
+    $( "ng-md-icon" ).removeClass( "fav-btn" ).addClass( "fav-btn-fill" );
   };
 
   $scope.dislike = function (card) {
