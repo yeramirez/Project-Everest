@@ -27,22 +27,22 @@ angular.module('choral.postList', [
   // Get user profile information calling Auth0 api
   $scope.profile = auth.profile;
 
-  var newLiked = "sarah";
   var personNickname = auth.profile.nickname;
+  var personId = auth.profile.user_id;
+
+  $scope.matched = false;
 
   $scope.like = function (card) {
-    // card.likes += 1;
+    $scope.matched = true;
     CardSvc.like(card);
-    var hellothere = JSON.stringify(card);
-    console.log("The card is " + hellothere);
-    CardSvc.addUserLike(card._id, newLiked)
-    .then(function () {
-      console.log(card);
-    });
-    //$( "ng-md-icon" ).removeClass( "fav-btn" ).addClass( "fav-btn-fill");
-  };
+    console.log($scope.matched);
 
-  $scope.dislike = function (card) {
-    CardSvc.dislike(card);
+    CardSvc.addUserLike(card._id, {
+      user: personNickname,
+      user_id:personId
+    }).success(function () {
+      //$("ng-md-icon").removeClass("fav-btn").addClass( "fav-btn-fill");
+    });
   };
+  console.log($scope.matched);
 }]);
