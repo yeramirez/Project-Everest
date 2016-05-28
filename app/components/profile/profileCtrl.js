@@ -1,6 +1,6 @@
 'use strict';
 
-choral.controller('ProfileCtrl', ['$scope', 'auth', 'user', 'CardSvc', '$http', function UserInfoCtrl ($scope, auth, user, CardSvc, $http) {
+choral.controller('ProfileCtrl', ['$scope', 'auth', 'user', 'CardSvc', function UserInfoCtrl ($scope, auth, user, CardSvc) {
 
   $scope.user = user;
   var user_id = user.data[0].user_id;

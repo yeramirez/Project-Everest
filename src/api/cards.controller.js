@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 var router = express.Router();
 var Card = require('../models/Card.js');
 var Collabs = require('../models/Collabs.js');
+var Like = require('../models/Like.js');
 var db = require('../db');
 var jwt = require('express-jwt');
 
@@ -16,7 +17,7 @@ var authCheck = jwt({
   audience: process.env.AUTH_AUDIENCE
 });
 
-router.get('/cards', authCheck, function (req, res, next) {
+router.get('/cards', function (req, res, next) {
 	Card.find(function (err, cards) {
     if(err) {
       return next(err);
@@ -110,9 +111,34 @@ router.put('/cards/:card/likes', function(req, res, next) {
   });
 });
 
-router.get('/cards/:card/likers', function(req, res, next) {
-  req.card.populate('likers', function(err, card) {
-    res.json(card.likers);
+router.get('/cards/:card/liked', function(req, res, next) {
+  Like.find(function (err, liked) {
+    if(err) {
+      return next(err);
+    }
+
+    res.json(liked);
+  });
+});
+
+router.post('/cards/:card/liked', function(req, res, next) {
+  console.log ("----------RESPONSE-----------");
+
+  var banana = new Like(req.body);
+  console.log("This is the body: " + banana);
+  banana.card = req.card;
+
+  banana.save(function(err, banana) {
+    if (err) {
+      return next (err)
+    }
+    req.card.liked.push(banana.liked);
+    req.card.save(function (err, card) {
+      if (err) {
+        return next (err);
+      }
+      res.json(banana.liked);
+    });
   });
 });
 
