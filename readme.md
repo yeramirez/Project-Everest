@@ -1,20 +1,20 @@
-#Build
+# Build
 Mongo, Express, Angular, Node, with Authentication with Auth0.
 
-#Project Everest
+# Project Everest
 Join me, as I conquer my very own Mt. Everest.
 
-##Choral Milestones
+## Choral Milestones
 Below are defined user stories that will be followed during the building of this project.
 
-####Front-End (ish) User Stories
+#### Front-End (ish) User Stories
 | Issue #       | Description   					| Status     |
 | ------------- |:------------- 					|:----------:|
 | C100          | RESPONSIVE						| Complete	 |
 | C101          | Landing Page - CTA				| Complete	 |
 | C102          | Landing Page - Features List  	| Complete	 |
 
-####Back-End (ish) User Stories
+#### Back-End (ish) User Stories
 | Issue #       | Description   										 				| Status     |
 | ------------- |:------------- 										 				|:----------:|
 | D100          | User should be able to log in using Google credentials 				| Complete |
