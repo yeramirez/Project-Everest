@@ -41,8 +41,8 @@ angular.module('choral.postList', [
       user: personNickname,
       user_id:personId
     }).success(function () {
-      //$("ng-md-icon").removeClass("fav-btn").addClass( "fav-btn-fill");
+      $("ng-md-icon").removeClass("fav-btn").addClass( "fav-btn-fill");
     });
   };
-  console.log($scope.matched);
+  // console.log($scope.matched);
 }]);
